@@ -1,0 +1,100 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入しますauto[]
+[
+  {
+    "key": "cmd+k f",
+    "command": "-workbench.action.closeFolder"
+  },
+  {
+    "key": "cmd+k f",
+    "command": "workbench.files.action.collapseExplorerFolders"
+  },
+  {
+    "key": "cmd+k left",
+    "command": "workbench.action.closeSidebar"
+  },
+  {
+    "key": "cmd+k up",
+    "command": "workbench.action.previousSideBarView"
+  },
+  {
+    "key": "cmd+k down",
+    "command": "workbench.action.nextSideBarView"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "workbench.view.scm"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-workbench.view.scm"
+  },
+  {
+    "key": "ctrl+shift+[Minus]",
+    "command": "workbench.action.navigateForward"
+  },
+  {
+    "key": "ctrl+[IntlRo]",
+    "command": "-workbench.action.navigateForward"
+  },
+  {
+    "key": "cmd+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "cmd+n",
+    "command": "explorer.newFile"
+  },
+  {
+    "command": "vscode-neovim.compositeEscape1",
+    "key": "j",
+    "when": "neovim.mode == insert && editorTextFocus",
+    "args": "j"
+  },
+  {
+    "command": "vscode-neovim.compositeEscape2",
+    "key": "k",
+    "when": "neovim.mode == insert && editorTextFocus",
+    "args": "k"
+  },
+  // ファイルツリー
+  // ファイル・フォルダ削除
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "alt+cmd+backspace",
+    "command": "-deleteFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  // リネーム
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // 分割して開く
+  {
+    "key": "v",
+    "command": "explorer.openToSide",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // コピー
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // ペースト
+  {
+    "key": "p",
+    "command": "filesExplorer.copfilesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  }
+]

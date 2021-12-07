@@ -1,4 +1,8 @@
 " setting
+filetype plugin on
+runtime macros/matchit.vim
+
+set clipboard=unnamed
 "文字コードをUFT-8に設定
 set fenc=utf-8
 " バックアップファイルを作らない
@@ -13,6 +17,11 @@ set hidden
 set showcmd
 "履歴件数を変更
 set history=200
+"マウス操作を許可
+set mouse=a
+"ディレクトリ展開
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
 " インサートモード
 inoremap <silent> jj <ESC>
 " NERDTreeの画面を開閉する
@@ -24,7 +33,7 @@ set number
 " 現在の行を強調表示
 set cursorline
 " 現在の行を強調表示（縦）
-set cursorcolumn
+" set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -73,6 +82,7 @@ Plug 'vim-jp/vimdoc-ja'
 Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
 call plug#end()
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 set helplang=ja,en
