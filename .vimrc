@@ -22,8 +22,21 @@ set mouse=a
 "ディレクトリ展開
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-" インサートモード
-inoremap <silent> jj <ESC>
+" キーバインド
+inoremap <silent> jk <ESC>
+
+nnoremap <Space>w  :<C-u>w<CR>
+nnoremap <Space>q  :<C-u>q<CR>
+nnoremap <Space>Q  :<C-u>q!<CR>
+nnoremap <Space>h  ^
+nnoremap <Space>l  $
+
+nnoremap <Space>o  :<C-u>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>
+nnoremap <Space>O  :<C-u>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
+
+nnoremap gs  :<C-u>%s///g<Left><Left><Left>
+vnoremap gs  :s///g<Left><Left><Left>
+
 " NERDTreeの画面を開閉する
 map <C-n> :NERDTreeToggle<CR>
 
