@@ -37,6 +37,12 @@ nnoremap <Space>O  :<C-u>for i in range(v:count1) \| call append(line('.')-1, ''
 nnoremap gs  :<C-u>%s///g<Left><Left><Left>
 vnoremap gs  :s///g<Left><Left><Left>
 
+" 入力モードでのカーソル移動
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
 " NERDTreeの画面を開閉する
 map <C-n> :NERDTreeToggle<CR>
 
