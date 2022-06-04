@@ -1,15 +1,8 @@
+" リーダーキー変更
+let mapleader = "\<Space>"
+
 inoremap <silent> jk <ESC>
 inoremap <silent> jk <ESC>
-
-nnoremap <Space>w  :<C-u>w<CR>
-nnoremap <Space>q  :<C-u>q<CR>
-nnoremap <Space>Q  :<C-u>q!<CR>
-nnoremap <Space>h  ^
-nnoremap <Space>l  $
-
-" 複数の空行を一気に挿入
-nnoremap <Space>o  :<C-u>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>
-nnoremap <Space>O  :<C-u>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
 
 " 置き換え
 nnoremap gs  :<C-u>%s///g<Left><Left><Left>
@@ -26,5 +19,14 @@ nnoremap j gj
 nnoremap k gk
 
 " リーダーキー
-nnoremap <Leader>vc :e ~/.vim/settings/cheat.md<CR>
+nnoremap <Leader>w  :<C-u>w<CR>
+nnoremap <Leader>q  :<C-u>q<CR>
+nnoremap <Leader>W  :<C-u>wq<CR>
+nnoremap <Leader>Q  :<C-u>q!<CR>
+nnoremap <Leader>h  ^
+nnoremap <Leader>l  $
+nnoremap <Leader>f  :<C-u>//gc<Home>%s/
+" チートファイルを開く
+nnoremap <Leader>vc :!open "https://oasis-parent-c73.notion.site/2e89658f153b49d5afcfe28d006a58cf?v=eb05c56fbaae4d18a8f33750d7054339"<CR>
+"編集履歴から開く
 nnoremap <Leader>e  :<C-u>/ oldfiles<Home>browse filter /
