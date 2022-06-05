@@ -1,10 +1,7 @@
-#!/bin/bash -e
-
-IGNORE_PATTERN="^\.(git|travis)"
+#!/bin/sh
 
 echo "Create dotfile links."
-for dotfile in .??*; do
-    [[ $dotfile =~ $IGNORE_PATTERN ]] && continue
-    ln -snfv "$(pwd)/$dotfile" "$HOME/$dotfile"
-done
+ln -snfv ~/dotfiles/.vimrc ~
+ln -snfv ~/dotfiles/vim/settings ~.vim/settings
 echo "Success"
+

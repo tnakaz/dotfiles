@@ -5,16 +5,20 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
   " see ./install_memo.md
-  Plug '~/.fzf'  
+  Plug '~/.fzf'
   Plug 'junegunn/fzf.vim'
 
-  "  rails
+  " rails
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-endwise'
   Plug 'slim-template/vim-slim'
 
   "Git
   Plug 'tpope/vim-fugitive'
+
+  "Theme
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " ヘルプの日本語化
@@ -34,3 +38,9 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
+
+"vim-airline
+let g:airline#extensions#tabline#enabled = 1
+nmap <C-h> <Plug>AirlineSelectPrevTab
+nmap <C-l> <Plug>AirlineSelectNextTab
+nmap <C-c> :bd<CR>

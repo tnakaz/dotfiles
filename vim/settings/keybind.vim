@@ -28,5 +28,6 @@ nnoremap <Leader>l  $
 nnoremap <Leader>f  :<C-u>//gc<Home>%s/
 " チートファイルを開く
 nnoremap <Leader>vc :!open "https://oasis-parent-c73.notion.site/2e89658f153b49d5afcfe28d006a58cf?v=eb05c56fbaae4d18a8f33750d7054339"<CR>
+nnoremap <Leader>n  :<C-u>NERDTreeFind<CR>
 "編集履歴から開く
-nnoremap <Leader>e  :<C-u>/ oldfiles<Home>browse filter /
+"nnoremap <Leader>e  :<C-u>/ oldfiles<Home>browse filter /
