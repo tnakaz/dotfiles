@@ -12,7 +12,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-endwise'
   Plug 'slim-template/vim-slim'
-
+  Plug 'mattn/emmet-vim'
+  Plug 'sirver/ultisnips'
+   
   "Git
   Plug 'tpope/vim-fugitive'
 
@@ -44,3 +46,8 @@ let g:airline#extensions#tabline#enabled = 1
 nmap <C-h> <Plug>AirlineSelectPrevTab
 nmap <C-l> <Plug>AirlineSelectNextTab
 nmap <C-c> :bd<CR>
+
+" ultisnipes
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-p>"
