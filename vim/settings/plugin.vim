@@ -16,7 +16,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'slim-template/vim-slim'
   Plug 'mattn/emmet-vim'
   Plug 'sirver/ultisnips'
-   
+
   "Git
   Plug 'tpope/vim-fugitive'
 
@@ -42,6 +42,11 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
+" Rgコマンドでフォルダ名を対象外にする
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --line-number --no-heading '.shellescape(<q-args>), 0,
+  \   fzf#vim#with_preview({'options': '--exact --reverse --delimiter : --nth 3..'}, 'right:50%:wrap'))
 
 "vim-airline
 let g:airline#extensions#tabline#enabled = 1
