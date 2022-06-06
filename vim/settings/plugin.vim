@@ -7,6 +7,8 @@ call plug#begin('~/.vim/plugged')
   " see ./install_memo.md
   Plug '~/.fzf'
   Plug 'junegunn/fzf.vim'
+  Plug 'kana/vim-operator-user'
+  Plug 'kana/vim-operator-replace'
 
   " rails
   Plug 'tpope/vim-rails'
@@ -51,3 +53,6 @@ nmap <C-c> :bd<CR>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+
+" operator-replace
+nnoremap <Leader>r <Plug>(operator-replace)
