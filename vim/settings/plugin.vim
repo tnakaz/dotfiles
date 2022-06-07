@@ -16,6 +16,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'slim-template/vim-slim'
   Plug 'mattn/emmet-vim'
   Plug 'sirver/ultisnips'
+  Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+  Plug 'neoclide/coc-solargraph'
 
   "Git
   Plug 'tpope/vim-fugitive'
@@ -61,3 +63,23 @@ let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
 " operator-replace
 nnoremap <Leader>r <Plug>(operator-replace)
+
+"Diagnosticsの、左横のアイコンの色設定
+highlight CocErrorSign ctermfg=15 ctermbg=196
+highlight CocWarningSign ctermfg=0 ctermbg=172
+
+"以下ショートカット
+
+"ノーマルモードで
+"スペース2回でCocList
+nmap <silent> cc :<C-u>CocList<cr>
+"スペースhでHover
+nmap <silent> ch :<C-u>call CocAction('doHover')<cr>
+"スペースdfでDefinition
+nmap <silent> cdf <Plug>(coc-definition)
+"スペースrfでReferences
+nmap <silent> crf <Plug>(coc-references)
+"スペースrnでRename
+nmap <silent> crn <Plug>(coc-rename)
+"スペースfmtでFormat
+nmap <silent> cfmt <Plug>(coc-format)
