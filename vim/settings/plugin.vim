@@ -16,9 +16,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-endwise'
   Plug 'slim-template/vim-slim'
   Plug 'mattn/emmet-vim'
-  Plug 'sirver/ultisnips'
+  " Plug 'sirver/ultisnips'
   Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-solargraph'
+  Plug 'thoughtbot/vim-rspec'
 
   "Git
   Plug 'tpope/vim-fugitive'
@@ -57,31 +58,46 @@ nmap <C-h> <Plug>AirlineSelectPrevTab
 nmap <C-l> <Plug>AirlineSelectNextTab
 nmap <C-c> :bd<CR>
 
-" ultisnipes
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+" " ultisnipes
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<c-n>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
 " operator-replace
 map <Leader>r <Plug>(operator-replace)
+
+nmap <Leader>j <Plug>(jumpcursor-jump)
+
+" vim-rspec
+let g:rspec_command = "!bin/rspec {spec}"
+
+command! Rcs :call RunCurrentSpecFile()
+command! Rns :call RunNearestSpec()
+command! Ras :call RunAllSpecs()
+
+" coc.nvim
+"" <Tab>で候補をナビゲート
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+"" <Tab>で次、<S+Tab>で前
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 "Diagnosticsの、左横のアイコンの色設定
 highlight CocErrorSign ctermfg=15 ctermbg=196
 highlight CocWarningSign ctermfg=0 ctermbg=172
 
-"以下ショートカット
-"ノーマルモードで
-"スペース2回でCocList
+"" keybind
 nmap <silent> cl :<C-u>CocList<cr>
-"スペースhでHover
 nmap <silent> ch :<C-u>call CocAction('doHover')<cr>
-"スペースdfでDefinition
 nmap <silent> cdf <Plug>(coc-definition)
-"スペースrfでReferences
 nmap <silent> crf <Plug>(coc-references)
-"スペースrnでRename
 nmap <silent> crn <Plug>(coc-rename)
-"スペースfmtでFormat
 nmap <silent> cfmt <Plug>(coc-format)
-
-nmap <Leader>j <Plug>(jumpcursor-jump)
