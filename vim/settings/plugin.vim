@@ -62,7 +62,7 @@ let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
 " operator-replace
-nnoremap <Leader>r <Plug>(operator-replace)
+map <Leader>r <Plug>(operator-replace)
 
 "Diagnosticsの、左横のアイコンの色設定
 highlight CocErrorSign ctermfg=15 ctermbg=196
@@ -72,7 +72,7 @@ highlight CocWarningSign ctermfg=0 ctermbg=172
 
 "ノーマルモードで
 "スペース2回でCocList
-nmap <silent> cc :<C-u>CocList<cr>
+nmap <silent> cl :<C-u>CocList<cr>
 "スペースhでHover
 nmap <silent> ch :<C-u>call CocAction('doHover')<cr>
 "スペースdfでDefinition
