@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'kana/vim-operator-user'
   Plug 'kana/vim-operator-replace'
+  Plug 'skanehira/jumpcursor.vim'
 
   " rails
   Plug 'tpope/vim-rails'
@@ -69,7 +70,6 @@ highlight CocErrorSign ctermfg=15 ctermbg=196
 highlight CocWarningSign ctermfg=0 ctermbg=172
 
 "以下ショートカット
-
 "ノーマルモードで
 "スペース2回でCocList
 nmap <silent> cl :<C-u>CocList<cr>
@@ -83,3 +83,5 @@ nmap <silent> crf <Plug>(coc-references)
 nmap <silent> crn <Plug>(coc-rename)
 "スペースfmtでFormat
 nmap <silent> cfmt <Plug>(coc-format)
+
+nmap <Leader>j <Plug>(jumpcursor-jump)
