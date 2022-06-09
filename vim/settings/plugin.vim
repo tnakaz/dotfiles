@@ -17,7 +17,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'slim-template/vim-slim'
   Plug 'mattn/emmet-vim'
   " Plug 'sirver/ultisnips'
-  Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'neoclide/coc-solargraph'
   Plug 'thoughtbot/vim-rspec'
 
