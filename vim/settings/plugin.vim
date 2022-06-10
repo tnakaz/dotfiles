@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
   Plug 'vim-jp/vimdoc-ja'
-  Plug 'preservim/nerdtree'
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
@@ -12,6 +11,13 @@ call plug#begin('~/.vim/plugged')
   Plug 'skanehira/jumpcursor.vim'
   Plug 'simeji/winresizer'
   
+  " Filer
+  Plug 'lambdalisue/fern.vim'
+  Plug 'yuki-yano/fern-preview.vim'
+  Plug 'lambdalisue/fern-git-status.vim'
+  Plug 'lambdalisue/fern-bookmark.vim'
+  Plug 'LumaKernel/fern-mapping-fzf.vim'
+
   " rails
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-endwise'
@@ -35,7 +41,7 @@ call plug#end()
 set helplang=ja,en
 
 " NERDTreeの画面を開閉する
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
 
 " fzf
 nnoremap <silent> ,f :GFiles<CR>
@@ -125,3 +131,24 @@ highlight link ALEWarningSign StorageClass
 " Ctrl + kで次の指摘へ、Ctrl + jで前の指摘へ移動
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+"Fern
+" 隠しファイルを表示する
+let g:fern#default_hidden=1
+" Fern .をSpace+eキーに置き換え
+nnoremap <silent> <Leader>e :<C-u>Fern .<CR>
+nnoremap <silent> <Leader>n :<C-u>Fern . -reveal=%<CR>
+nnoremap <silent> <Leader>b :<C-u>Fern bookmark:///<CR>
+
+function! s:fern_settings() abort
+  nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
+  nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
+  nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
+  nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
+endfunction
+
+augroup fern-settings
+  autocmd!
+  autocmd FileType fern call s:fern_settings()
+augroup END
+
