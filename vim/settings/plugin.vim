@@ -3,14 +3,18 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
+  Plug 'kana/vim-operator-user'
+  Plug 'kana/vim-operator-replace'
+  Plug 'simeji/winresizer'
+
   " see ./install_memo.md
   Plug '~/.fzf'
   Plug 'junegunn/fzf.vim'
-  Plug 'kana/vim-operator-user'
-  Plug 'kana/vim-operator-replace'
+
+  " 移動補助
+  Plug 'unblevable/quick-scope'
   Plug 'skanehira/jumpcursor.vim'
-  Plug 'simeji/winresizer'
-  
+
   " Filer
   Plug 'lambdalisue/fern.vim'
   Plug 'yuki-yano/fern-preview.vim'
@@ -23,11 +27,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-endwise'
   Plug 'slim-template/vim-slim'
   Plug 'mattn/emmet-vim'
-  " Plug 'sirver/ultisnips'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'neoclide/coc-solargraph'
   Plug 'thoughtbot/vim-rspec'
   Plug 'w0rp/ale'
+  " Plug 'sirver/ultisnips'
 
   "Git
   Plug 'tpope/vim-fugitive'
@@ -103,7 +107,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 highlight CocErrorSign ctermfg=15 ctermbg=196
 highlight CocWarningSign ctermfg=0 ctermbg=172
 
-"" keybind
 nmap <silent> cl :<C-u>CocList<cr>
 nmap <silent> ch :<C-u>call CocAction('doHover')<cr>
 nmap <silent> cdf <Plug>(coc-definition)
@@ -151,4 +154,3 @@ augroup fern-settings
   autocmd!
   autocmd FileType fern call s:fern_settings()
 augroup END
-

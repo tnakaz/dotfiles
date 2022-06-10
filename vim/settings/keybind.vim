@@ -23,6 +23,7 @@ nnoremap <Leader>w  :<C-u>w<CR>
 nnoremap <Leader>q  :<C-u>q<CR>
 nnoremap <Leader>W  :<C-u>wq<CR>
 nnoremap <Leader>Q  :<C-u>q!<CR>
+nnoremap <Leader>o  :<C-u>only<CR>
 nnoremap <Leader>h  ^
 nnoremap <Leader>l  $
 nnoremap <Leader>f  :<C-u>//gc<Home>%s/
