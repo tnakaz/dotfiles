@@ -10,7 +10,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'kana/vim-operator-user'
   Plug 'kana/vim-operator-replace'
   Plug 'skanehira/jumpcursor.vim'
-
+  Plug 'simeji/winresizer'
+  
   " rails
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-endwise'
@@ -20,6 +21,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'neoclide/coc-solargraph'
   Plug 'thoughtbot/vim-rspec'
+  Plug 'w0rp/ale'
 
   "Git
   Plug 'tpope/vim-fugitive'
@@ -66,6 +68,7 @@ nmap <C-c> :bd<CR>
 " operator-replace
 map <Leader>r <Plug>(operator-replace)
 
+" jumpcursor
 nmap <Leader>j <Plug>(jumpcursor-jump)
 
 " vim-rspec
@@ -101,3 +104,24 @@ nmap <silent> cdf <Plug>(coc-definition)
 nmap <silent> crf <Plug>(coc-references)
 nmap <silent> crn <Plug>(coc-rename)
 nmap <silent> cfmt <Plug>(coc-format)
+
+" winresizer
+" let g:winresizer_vert_resize = 5
+" let g:winresizer_horiz_resize = 5
+
+" ale
+" 保存時のみ実行する
+let g:ale_lint_on_text_changed = 0
+" 表示に関する設定
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
+let g:airline#extensions#ale#open_lnum_symbol = '('
+let g:airline#extensions#ale#close_lnum_symbol = ')'
+let g:ale_echo_msg_format = '[%linter%]%code: %%s'
+let g:ale_fixers = { 'ruby': ['rubocop'] }
+let g:ale_fix_on_save = 1
+highlight link ALEErrorSign Tag
+highlight link ALEWarningSign StorageClass
+" Ctrl + kで次の指摘へ、Ctrl + jで前の指摘へ移動
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
