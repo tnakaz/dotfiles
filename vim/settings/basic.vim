@@ -60,7 +60,7 @@ set wrapscan
 " 検索語をハイライト表示
 set hlsearch
 " ESC連打でハイライト解除
-" nmap <Esc><Esc> :nohlsearch<CR><Esc>
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 "ディレクトリ展開
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
