@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'kana/vim-operator-user'
   Plug 'kana/vim-operator-replace'
   Plug 'simeji/winresizer'
+  Plug 'folke/which-key.nvim'
 
   " see ./install_memo.md
   Plug '~/.fzf'
@@ -157,3 +158,11 @@ augroup fern-settings
   autocmd!
   autocmd FileType fern call s:fern_settings()
 augroup END
+
+lua << EOF
+  require("which-key").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+EOF
