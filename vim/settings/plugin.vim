@@ -11,6 +11,9 @@ call plug#begin('~/.vim/plugged')
   Plug '~/.fzf'
   Plug 'junegunn/fzf.vim'
 
+  " Dashboard
+  Plug 'goolord/alpha-nvim'
+
   " 移動補助
   Plug 'unblevable/quick-scope'
   Plug 'skanehira/jumpcursor.vim'
