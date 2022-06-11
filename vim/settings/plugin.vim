@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'kana/vim-operator-user'
   Plug 'kana/vim-operator-replace'
   Plug 'simeji/winresizer'
+  Plug 't9md/vim-quickhl'
   Plug 'folke/which-key.nvim'
 
   " see ./install_memo.md
@@ -158,6 +159,12 @@ augroup fern-settings
   autocmd!
   autocmd FileType fern call s:fern_settings()
 augroup END
+
+" vim-quickhl
+nmap <silent> <leader>m <Plug>(quickhl-manual-this)
+xmap <silent> <leader>m <Plug>(quickhl-manual-this)
+nmap <silent> <leader>M <Plug>(quickhl-manual-reset)
+xmap <silent> <leader>M <Plug>(quickhl-manual-reset)
 
 lua << EOF
   require("which-key").setup {
