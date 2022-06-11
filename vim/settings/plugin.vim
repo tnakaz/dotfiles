@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'terryma/vim-expand-region'
   Plug 'folke/which-key.nvim'
 
+  " FuzzyFinder
   " see ./install_memo.md
   Plug '~/.fzf'
   Plug 'junegunn/fzf.vim'
@@ -45,6 +46,8 @@ call plug#begin('~/.vim/plugged')
   "Theme
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'sheerun/vim-polyglot'
+
 call plug#end()
 
 " ヘルプの日本語化
@@ -120,6 +123,7 @@ nmap <silent> crf <Plug>(coc-references)
 nmap <silent> crn <Plug>(coc-rename)
 nmap <silent> cfmt <Plug>(coc-format)
 
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 " winresizer
 " let g:winresizer_vert_resize = 5
 " let g:winresizer_horiz_resize = 5
