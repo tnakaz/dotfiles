@@ -37,6 +37,8 @@ set laststatus=2
 set wildmode=list:longest
 " シンタックスハイライトの有効化
 syntax enable
+hi Pmenu ctermfg=white ctermbg=darkred guifg=gray guibg=darkred
+hi PmenuSel term=bold ctermfg=black ctermbg=gray guifg=black guibg=gray
 
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
