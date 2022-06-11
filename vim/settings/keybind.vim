@@ -32,5 +32,8 @@ nnoremap <Leader>?  :<C-u>WhichKey<CR>
 nnoremap <Leader>h  ^
 nnoremap <Leader>l  $
 nnoremap <Leader>f  :<C-u>//gc<Home>%s/
+nnoremap <Leader>g  :<C-u>:Gtabedit :<CR>
+nnoremap <Leader>gd  :<C-u>:Gdiff<CR>
 " チートファイルを開く
 nnoremap <Leader>vc :!open "https://oasis-parent-c73.notion.site/2e89658f153b49d5afcfe28d006a58cf?v=eb05c56fbaae4d18a8f33750d7054339"<CR>
+
