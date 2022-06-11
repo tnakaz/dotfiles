@@ -42,6 +42,7 @@ call plug#begin('~/.vim/plugged')
 
   "Git
   Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
 
   "Theme
   Plug 'vim-airline/vim-airline'
@@ -182,3 +183,6 @@ lua << EOF
     -- refer to the configuration section below
   }
 EOF
+
+" airblade/vim-gitgutter
+nmap <silent> ph :<C-u>GitGutterPreviewHunk<CR>

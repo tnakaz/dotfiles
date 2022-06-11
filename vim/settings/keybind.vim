@@ -32,8 +32,15 @@ nnoremap <Leader>?  :<C-u>WhichKey<CR>
 nnoremap <Leader>h  ^
 nnoremap <Leader>l  $
 nnoremap <Leader>f  :<C-u>//gc<Home>%s/
-nnoremap <Leader>g  :<C-u>:Gtabedit :<CR>
-nnoremap <Leader>gd  :<C-u>:Gdiff<CR>
 " チートファイルを開く
 nnoremap <Leader>vc :!open "https://oasis-parent-c73.notion.site/2e89658f153b49d5afcfe28d006a58cf?v=eb05c56fbaae4d18a8f33750d7054339"<CR>
 
+nmap <silent> g :<C-u>Gtabedit :<cr>
+nmap <silent> gd :<C-u>Gdiff<cr>
+nnoremap <Leader>p :<C-u>GitGutterPreviewHunk<CR>
+
+" functions
+function PlugStr (url)
+  let str = substitute(a:url,'https://github.com/','','g')
+  return "Plug '".str."'"
+endfunction
