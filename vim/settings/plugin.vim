@@ -38,8 +38,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc-solargraph'
   Plug 'thoughtbot/vim-rspec'
   " Plug 'w0rp/ale'
-  " Plug 'sirver/ultisnips'
-
+  Plug 'sirver/ultisnips'
+  Plug 'honza/vim-snippets'
+   
   "Git
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
@@ -80,10 +81,10 @@ nmap <C-h> <Plug>AirlineSelectPrevTab
 nmap <C-l> <Plug>AirlineSelectNextTab
 nmap <C-c> :bd<CR>
 
-" " ultisnipes
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<c-n>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+" ultisnipes
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
 " operator-replace
 map <Leader>r <Plug>(operator-replace)
@@ -112,7 +113,6 @@ inoremap <silent><expr> <Tab>
 "" <Tab>で次、<S+Tab>で前
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
 "Diagnosticsの、左横のアイコンの色設定
 highlight CocErrorSign ctermfg=15 ctermbg=196
 highlight CocWarningSign ctermfg=0 ctermbg=172
@@ -183,6 +183,3 @@ lua << EOF
     -- refer to the configuration section below
   }
 EOF
-
-" airblade/vim-gitgutter
-nmap <silent> ph :<C-u>GitGutterPreviewHunk<CR>
