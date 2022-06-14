@@ -37,12 +37,12 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc-solargraph'
   Plug 'thoughtbot/vim-rspec'
   " Plug 'w0rp/ale'
-  Plug 'sirver/ultisnips'
   Plug 'honza/vim-snippets'
    
   "Git
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
+  Plug 'kdheepak/lazygit.nvim'
 
   "Theme
   Plug 'vim-airline/vim-airline'
@@ -57,7 +57,7 @@ set helplang=ja,en
 " NERDTreeの画面を開閉する
 " map <C-n> :NERDTreeToggle<CR>
 
-" fzf
+" Fzf:
 nnoremap <silent> ,f :GFiles<CR>
 nnoremap <silent> ,F :GFiles?<CR>
 nnoremap <silent> ,b :Buffers<CR>
@@ -74,31 +74,33 @@ command! -bang -nargs=* Rg
   \   'rg --line-number --no-heading '.shellescape(<q-args>), 0,
   \   fzf#vim#with_preview({'options': '--exact --reverse --delimiter : --nth 3..'}, 'right:50%:wrap'))
 
-"vim-airline
-let g:airline#extensions#tabline#enabled = 1
 nmap <C-h> <Plug>AirlineSelectPrevTab
 nmap <C-l> <Plug>AirlineSelectNextTab
+" Airline:
 nmap <C-c> :bd<CR>
+let g:airline_section_c = '%t %M'
+let g:airline#extensions#hunks#non_zero_only = 1 
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#show_tab_type = 1
+let g:airline#extensions#tabline#enabled = 1
 
-" ultisnipes
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-p>"
-
-" operator-replace
+" OperatorReplace:
 map <Leader>r <Plug>(operator-replace)
 
-" jumpcursor
+" Jumpcursor:
 nmap <Leader>j <Plug>(jumpcursor-jump)
 
-" vim-rspec
+" VimRspec:
 let g:rspec_command = "!bin/rspec {spec}"
-
 command! Rcs :call RunCurrentSpecFile()
 command! Rns :call RunNearestSpec()
 command! Ras :call RunAllSpecs()
 
-" coc.nvim
+" Coc:
 "" <Tab>で候補をナビゲート
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -124,10 +126,14 @@ nmap <silent> crn <Plug>(coc-rename)
 nmap <silent> cfmt <Plug>(coc-format)
 
 nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
-" winresizer
-" let g:winresizer_vert_resize = 5
-" let g:winresizer_horiz_resize = 5
 
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+let g:coc_snippet_next = '<tab>'
 " ale
 " " 保存時のみ実行する
 " let g:ale_lint_on_text_changed = 0
@@ -145,10 +151,8 @@ nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 " nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 " nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-"Fern
-" 隠しファイルを表示する
+" Fern:
 let g:fern#default_hidden=1
-" Fern .をSpace+eキーに置き換え
 nnoremap <silent> <Leader>e :<C-u>Fern .<CR>
 nnoremap <silent> <Leader>n :<C-u>Fern . -reveal=%<CR>
 nnoremap <silent> <Leader>b :<C-u>Fern bookmark:///<CR>
@@ -171,10 +175,5 @@ xmap <silent> <leader>m <Plug>(quickhl-manual-this)
 nmap <silent> <leader>M <Plug>(quickhl-manual-reset)
 xmap <silent> <leader>M <Plug>(quickhl-manual-reset)
 
-lua << EOF
-  require("which-key").setup {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  }
-EOF
+" setup mapping to call :LazyGit
+nnoremap <silent> <leader>gg :LazyGit<CR>
