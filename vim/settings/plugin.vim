@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'simeji/winresizer'
   Plug 't9md/vim-quickhl'
   Plug 'folke/which-key.nvim'
+  Plug 'tversteeg/registers.nvim'
 
   " FuzzyFinder
   " see ./install_memo.md
