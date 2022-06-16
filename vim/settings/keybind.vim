@@ -29,6 +29,7 @@ nnoremap <Leader>Q  :<C-u>q!<CR>
 nnoremap <Leader>o  :<C-u>only<CR>
 nnoremap <Leader>s  :<C-u>source %<CR>
 nnoremap <Leader>?  :<C-u>WhichKey<CR>
+nnoremap <Leader>p  :<C-u>echo expand("%:p")<CR>
 nnoremap <Leader>h  ^
 nnoremap <Leader>l  $
 nnoremap <Leader>g  :<C-u>Gtabedit :<cr>
@@ -37,7 +38,6 @@ nnoremap <Leader>f  :<C-u>//gc<Home>%s/
 nnoremap <Leader>vc :!open "https://oasis-parent-c73.notion.site/2e89658f153b49d5afcfe28d006a58cf?v=eb05c56fbaae4d18a8f33750d7054339"<CR>
 
 nmap <silent> gd :<C-u>Gdiff<cr>
-nnoremap <Leader>p :<C-u>GitGutterPreviewHunk<CR>
 
 noremap  ∆ <C-w>w
 inoremap ∆ <Esc><C-w>w

@@ -39,7 +39,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'thoughtbot/vim-rspec'
   " Plug 'w0rp/ale'
   Plug 'honza/vim-snippets'
-   
+
+  " yaml
+  Plug 'Yggdroot/indentLine'
+
   "Git
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
@@ -178,3 +181,8 @@ xmap <silent> <leader>M <Plug>(quickhl-manual-reset)
 
 " setup mapping to call :LazyGit
 nnoremap <silent> <leader>gg :LazyGit<CR>
+
+" Yaml:
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+let g:indentLine_char = '⦙'
+
