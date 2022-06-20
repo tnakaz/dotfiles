@@ -48,7 +48,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
   Plug 'kdheepak/lazygit.nvim'
-
+  Plug 'iberianpig/tig-explorer.vim'
+  Plug 'rbgrouleff/bclose.vim'
   "Theme
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -198,3 +199,14 @@ nnoremap <silent> <leader>gg :LazyGit<CR>
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 let g:indentLine_char = '⦙'
 
+" Tig:
+" open tig with Project root path
+nnoremap <Leader>t :TigOpenProjectRootDir<CR>
+" open tig grep
+nnoremap tg :TigGrep<CR>
+" resume from last grep
+nnoremap tgr :TigGrepResume<CR>
+" open tig grep with the selected word
+vnoremap tg y:TigGrep<Space><C-R>"<CR>
+" open tig grep with the word under the cursor
+nnoremap gw :<C-u>:TigGrep<Space><C-R><C-W><CR>
