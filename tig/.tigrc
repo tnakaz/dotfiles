@@ -79,15 +79,6 @@ bind log        gm   !git show -m %(commit) # use this when diff can not be disp
 bind diff       gm   !git show -m %(commit) # use this when diff can not be displayed, such as for merge
 bind stage      gm   !git show -m %(commit) # use this when diff can not be displayed, such as for merge
 
-#Commit
-# bind generic C      !git commit
-# bind refs    C      !git commit
-# bind main    C      !git commit
-bind generic <Esc>u !git add -p %(file)
-
-#Pull
-bind generic U      ?git pull %(remote)
-
 #Fetch
 bind generic F      ?git fetch %(remote)
 bind main    F      ?git fetch %(remote)
@@ -98,7 +89,6 @@ bind generic K move-page-up
 
 #Reflog
 bind log     l      !<sh -c "git reflog --pretty=raw | tig --pretty=raw"
-bind generic _      ?git reset --hard HEAD@{"%(prompt Enter HEAD@{} number: )"}
 bind generic S      ?git reset --soft HEAD~1
 
 #Reset --hard
@@ -125,6 +115,6 @@ bind refs    I      ?git rebase -i %(branch)
 bind main    <Esc>i ?git rebase -i %(commit)
 bind diff    <Esc>i ?git rebase -i %(commit)
 
-#diff
+#compare
 bind main    cm     ?git diff %(commit)..HEAD
 
