@@ -151,6 +151,10 @@ inoremap <silent><expr> <TAB>
       \ coc#refresh()
 
 let g:coc_snippet_next = '<tab>'
+
+vmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
+
 " ale
 " " 保存時のみ実行する
 let g:ale_lint_on_text_changed = 0
