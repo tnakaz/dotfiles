@@ -18,9 +18,6 @@ inoremap <C-l> <Right>
 nnoremap j gj
 nnoremap k gk
 
-nnoremap <C-j> 5j
-nnoremap <C-k> 5k
-
 " リーダーキー
 nnoremap <Leader>w  :<C-u>w<CR>
 nnoremap <Leader>q  :<C-u>q<CR>
