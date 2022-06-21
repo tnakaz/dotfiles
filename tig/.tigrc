@@ -115,6 +115,7 @@ bind refs    I      ?git rebase -i %(branch)
 bind main    <Esc>i ?git rebase -i %(commit)
 bind diff    <Esc>i ?git rebase -i %(commit)
 
-#compare
-bind main    cm     ?git diff %(commit)..HEAD
+#diff
+bind main    <Esc>c     ?git diff %(commit)..HEAD
+bind main    <Esc>b     ?git diff %(branch)..HEAD
 
