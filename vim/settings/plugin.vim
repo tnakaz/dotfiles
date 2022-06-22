@@ -214,3 +214,5 @@ nnoremap tgr :TigGrepResume<CR>
 vnoremap tg y:TigGrep<Space><C-R>"<CR>
 " open tig grep with the word under the cursor
 nnoremap gw :<C-u>:TigGrep<Space><C-R><C-W><CR>
+
+let g:lazygit_floating_window_scaling_factor = 0.95 " scaling factor for floating window

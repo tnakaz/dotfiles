@@ -72,3 +72,13 @@ if executable('im-select')
   autocmd InsertLeave * :call system('im-select com.apple.keylayout.ABC')
   autocmd CmdlineLeave * :call system('im-select com.apple.keylayout.ABC')
 endif
+
+" Term:
+command! -nargs=* T split | wincmd j | resize 20 | terminal <args>
+autocmd TermOpen * startinsert
+
+" Functions:
+function PlugStr (url)
+  let str = substitute(a:url,'https://github.com/','','g')
+  return "Plug '".str."'"
+endfunction

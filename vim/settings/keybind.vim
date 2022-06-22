@@ -42,9 +42,4 @@ tnoremap ∆ <C-\><C-n><C-w>w
 noremap  ˚ <C-w>W
 inoremap ˚ <Esc><C-w>W
 tnoremap ˚ <C-\><C-n><C-w>W
-
-" functions
-function PlugStr (url)
-  let str = substitute(a:url,'https://github.com/','','g')
-  return "Plug '".str."'"
-endfunction
+tnoremap <Esc> <C-\><C-n>
