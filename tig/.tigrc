@@ -3,7 +3,7 @@ set main-view-date        = custom
 set main-view-date-format = "%Y-%m-%d %H:%M"
 set ignore-case           = smart-case
 set mouse                 = yes
-set wrap-lines            = yes
+set wrap-lines            = no # 長いパスのファイルが開けない
 set mouse-scroll          = 5
 set diff-highlight        = true
 set refresh-mode          = periodic
@@ -26,7 +26,6 @@ bind generic    pl   !git pull %(remote)
 bind generic    P   !<git push
 bind generic    PU   !<git push -u %(remote) %(repo:head)
 bind generic    <Ctrl-f>   scroll-page-down
-bind generic    <Ctrl-b>   scroll-page-up
 
 bind status     cc    >git commit
 bind stage      cc    >git commit
