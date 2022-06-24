@@ -42,4 +42,3 @@ tnoremap ∆ <C-\><C-n><C-w>w
 noremap  ˚ <C-w>W
 inoremap ˚ <Esc><C-w>W
 tnoremap ˚ <C-\><C-n><C-w>W
-tnoremap <Esc> <C-\><C-n>
