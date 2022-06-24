@@ -66,12 +66,12 @@ set helplang=ja,en
 " map <C-n> :NERDTreeToggle<CR>
 
 " Fzf:
-nnoremap <silent> ,f :GFiles<CR>
-nnoremap <silent> ,F :GFiles?<CR>
-nnoremap <silent> ,b :Buffers<CR>
-nnoremap <silent> ,l :BLines<CR>
-nnoremap <silent> ,h :History<CR>
-nnoremap <silent> ,r :Rg<CR>
+nnoremap <silent> ,f :GFiles!<CR>
+nnoremap <silent> ,F :GFiles!?<CR>
+nnoremap <silent> ,b :Buffers!<CR>
+nnoremap <silent> ,l :BLines!<CR>
+nnoremap <silent> ,h :History!<CR>
+nnoremap <silent> ,r :Rg!<CR>
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
@@ -81,7 +81,7 @@ command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --line-number --no-heading '.shellescape(<q-args>), 0,
   \   fzf#vim#with_preview({'options': '--exact --reverse --delimiter : --nth 3..'}, 'right:50%:wrap'))
-
+let g:fzf_preview_window = ['up:50%']
 nmap <C-h> <Plug>AirlineSelectPrevTab
 nmap <C-l> <Plug>AirlineSelectNextTab
 " Airline:
