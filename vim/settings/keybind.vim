@@ -23,7 +23,7 @@ nnoremap <Leader>w  :<C-u>w<CR>
 nnoremap <Leader>q  :<C-u>q<CR>
 nnoremap <Leader>W  :<C-u>wq<CR>
 nnoremap <Leader>Q  :<C-u>q!<CR>
-nnoremap <Leader>o  :<C-u>only<CR>
+nnoremap <Leader>O  :<C-u>only<CR>
 nnoremap <Leader>s  :<C-u>source %<CR>
 nnoremap <Leader>?  :<C-u>WhichKey<CR>
 nnoremap <Leader>p  :<C-u>echo expand("%:p")<CR>
@@ -42,3 +42,14 @@ tnoremap ∆ <C-\><C-n><C-w>w
 noremap  ˚ <C-w>W
 inoremap ˚ <Esc><C-w>W
 tnoremap ˚ <C-\><C-n><C-w>W
+
+nnoremap <Leader>o  :<C-u>call WinExpand()<CR>
+nnoremap <Leader>=  :<C-u>call WinCollapse()<CR>
+function WinExpand ()
+    :res
+    :vert res
+endfunction
+
+function WinCollapse()
+    exe "normal \<c-w>\="
+endfunction

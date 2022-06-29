@@ -64,7 +64,7 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-"ディレクトリ展開
+" %%<TAB>でディレクトリパス入力
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " ノーマルモードに戻った時に自動的に英語入力に切り替える
