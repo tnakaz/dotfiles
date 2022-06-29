@@ -17,6 +17,7 @@ set history=200
 set mouse=a
 
 " 見た目系
+colorscheme hybrid
 " 行番号を表示
 set number
 " 現在の行を強調表示
@@ -38,7 +39,6 @@ set wildmode=list:longest
 " シンタックスハイライトの有効化
 syntax enable
 set background=dark
-colorscheme hybrid
 
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
@@ -72,6 +72,31 @@ if executable('im-select')
   autocmd InsertLeave * :call system('im-select com.apple.keylayout.ABC')
   autocmd CmdlineLeave * :call system('im-select com.apple.keylayout.ABC')
 endif
+
+"フォーカスしていない時の背景色(23を好きな値・色に変更)
+let g:InactiveBackGround = 'ctermbg=239'
+
+"Neovim内でフォーカスしていないペインの背景色設定
+execute ('hi NormalNC '.g:InactiveBackGround)
+execute ('hi NontextNC '.g:InactiveBackGround)
+execute ('hi SpecialkeyNC '.g:InactiveBackGround)
+execute ('hi EndOfBufferNC '.g:InactiveBackGround)
+
+"Neovim自体からフォーカスを外したりした際の切替設定
+"(フォーカスした時の設定はcolorschemeに合わせて変更）
+augroup ChangeBackGround
+autocmd!
+" フォーカスした時(colorscheme準拠に切替)
+autocmd FocusGained * hi Normal ctermbg=234 " :hi Normalで取得した値
+autocmd FocusGained * hi NonText ctermbg=234 " :hi NonTextで取得した値
+autocmd FocusGained * hi SpecialKey ctermbg=234 " :hi SpecialKeyで取得した値
+autocmd FocusGained * hi EndOfBuffer ctermbg=none " EndOfBufferの設定は恐らくclearなのでnoneを入れる
+" フォーカスを外した時（フォーカスしていない時の背景色に切替)
+autocmd FocusLost * execute('hi Normal '.g:InactiveBackGround)
+autocmd FocusLost * execute('hi NonText '.g:InactiveBackGround)
+autocmd FocusLost * execute('hi SpecialKey '.g:InactiveBackGround)
+autocmd FocusLost * execute('hi EndOfBuffer '.g:InactiveBackGround)
+augroup end
 
 " Term:
 command! -nargs=* T split | wincmd j | resize 20 | terminal <args>

@@ -10,7 +10,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'folke/which-key.nvim'
   Plug 'tversteeg/registers.nvim'
   Plug 'justinmk/vim-sneak'
-
   " FuzzyFinder
   " see ./install_memo.md
   Plug '~/.fzf'
@@ -134,6 +133,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 "Diagnosticsの、左横のアイコンの色設定
 highlight CocErrorSign ctermfg=15 ctermbg=196
 highlight CocWarningSign ctermfg=0 ctermbg=172
+highlight HighlightedyankRegion term=bold ctermbg=255 guibg=#f44336
 
 nmap <silent> cl :<C-u>CocList<cr>
 nmap <silent> ch :<C-u>call CocAction('doHover')<cr>
@@ -216,3 +216,5 @@ vnoremap tg y:TigGrep<Space><C-R>"<CR>
 nnoremap gw :<C-u>:TigGrep<Space><C-R><C-W><CR>
 
 let g:lazygit_floating_window_scaling_factor = 0.95 " scaling factor for floating window
+
+hi CursorLine ctermbg=23
