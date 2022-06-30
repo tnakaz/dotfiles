@@ -18,6 +18,7 @@ set mouse=a
 
 " 見た目系
 colorscheme hybrid
+hi CursorLine ctermbg=23
 " 行番号を表示
 set number
 " 現在の行を強調表示
@@ -38,7 +39,6 @@ set laststatus=2
 set wildmode=list:longest
 " シンタックスハイライトの有効化
 syntax enable
-set background=dark
 
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
@@ -107,3 +107,4 @@ function PlugStr (url)
   let str = substitute(a:url,'https://github.com/','','g')
   return "Plug '".str."'"
 endfunction
+
