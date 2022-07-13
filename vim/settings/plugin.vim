@@ -197,7 +197,7 @@ nmap <silent> <leader>M <Plug>(quickhl-manual-reset)
 xmap <silent> <leader>M <Plug>(quickhl-manual-reset)
 
 " setup mapping to call :LazyGit
-nnoremap <silent> <leader>gg :LazyGit<CR>
+nnoremap <silent>lg :LazyGit<CR>
 
 " Yaml:
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
@@ -217,3 +217,35 @@ nnoremap gw :<C-u>:TigGrep<Space><C-R><C-W><CR>
 
 let g:lazygit_floating_window_scaling_factor = 0.95 " scaling factor for floating window
 
+" Gitgutter
+" Always show sign column
+set signcolumn=yes
+
+" By default updatetime is 4000 ms
+set updatetime=100
+
+" Use fontawesome icons as signs
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '>'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = '<'
+
+" Default key mapping off
+let g:gitgutter_map_keys = 0
+augroup vimrc_vim_gitgutter
+  autocmd!
+  " sign column bg color
+  autocmd VimEnter,ColorScheme * highlight SignColumn guibg=bg ctermbg=bg
+
+  " sign column color
+  autocmd VimEnter,ColorScheme * highlight GitGutterAdd guifg=#000900 ctermfg=2
+  autocmd VimEnter,ColorScheme * highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+  autocmd VimEnter,ColorScheme * highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+augroup END
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
+nnoremap gif :<C-u>GitGutterFold<CR>
+nmap ghp <Plug>(GitGutterPreviewHunk)
+let g:gitgutter_preview_win_floating = 0
+let g:gitgutter_preview_win_location = 'bo'
