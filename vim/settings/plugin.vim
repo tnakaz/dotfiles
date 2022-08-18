@@ -61,9 +61,6 @@ call plug#end()
 " ヘルプの日本語化
 set helplang=ja,en
 
-" NERDTreeの画面を開閉する
-" map <C-n> :NERDTreeToggle<CR>
-
 " Fzf:
 nnoremap <silent> ,f :GFiles!<CR>
 nnoremap <silent> ,F :GFiles!?<CR>
