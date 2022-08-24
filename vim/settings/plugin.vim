@@ -10,6 +10,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'folke/which-key.nvim'
   Plug 'tversteeg/registers.nvim'
   Plug 'justinmk/vim-sneak'
+  Plug 'cohama/lexima.vim'
+  
   " FuzzyFinder
   " see ./install_memo.md
   Plug '~/.fzf'
