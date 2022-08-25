@@ -69,7 +69,9 @@ nnoremap <silent> ,F :GFiles!?<CR>
 nnoremap <silent> ,b :Buffers!<CR>
 nnoremap <silent> ,l :BLines!<CR>
 nnoremap <silent> ,h :History!<CR>
-nnoremap <silent> ,r :Rg!<CR>
+nnoremap <silent> ,rg :Rg!<CR>
+nnoremap <silent> ,rw :Rg!<C-r><C-w><CR>
+
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
@@ -134,7 +136,8 @@ highlight CocErrorSign ctermfg=15 ctermbg=196
 highlight CocWarningSign ctermfg=0 ctermbg=172
 highlight HighlightedyankRegion term=bold ctermbg=255 guibg=#f44336
 
-nmap <silent> cl :<C-u>CocList<cr>
+nmap <silent> cli :<C-u>CocList<cr>
+nmap <silent> cls :<C-u>CocList -I symbols<cr>
 nmap <silent> ch :<C-u>call CocAction('doHover')<cr>
 nmap <silent> cdf <Plug>(coc-definition)
 nmap <silent> crf <Plug>(coc-references)
@@ -195,8 +198,7 @@ xmap <silent> <leader>m <Plug>(quickhl-manual-this)
 nmap <silent> <leader>M <Plug>(quickhl-manual-reset)
 xmap <silent> <leader>M <Plug>(quickhl-manual-reset)
 
-" setup mapping to call :LazyGit
-nnoremap <silent>lg :LazyGit<CR>
+nnoremap <leader>g :LazyGit<CR>
 
 " Yaml:
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
