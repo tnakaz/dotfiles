@@ -1,0 +1,26 @@
+{
+  "settingsVersion": "1.67",
+  "exclusionRules": [
+    {
+      "pattern": "https?://mail.google.com/*",
+      "passKeys": ""
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": false,
+  "keyMappings": "# Insert your preferred key mappings here.\nmap s scrollPageUp\nmap <c-j> previousTab\nmap <c-k> nextTab\nmap <c-o> goBack\nmap <Tab> goForward",
+  "linkHintCharacters": "sadfjklewcmpgh",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "https://www.google.com/search?q=",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>,次へ",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<,前へ",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 60,
+  "smoothScroll": true,
+  "grabBackFocus": true,
+  "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\ng: https://www.google.com/search?q=%s Google\nmap: https://www.google.com/maps?q=%s Google maps\ngm: https://mail.google.com/mail/u/0/?ogbl#search/%s gmail\ny: https://www.youtube.com/results?search_query=%s YouTube\naz: https://www.amazon.jp/s/?field-keywords=%s Amazon\nqi: https://qiita.com/search?sort=&q=%s Qiita\nme: https://www.mercari.com/jp/search/?sort_order=price_asc&keyword=%s&category_root=5&category_child=72&brand_name=&brand_id=&size_group=&price_min=&price_max= メルカリ\npa: https://xn--odkm0eg.gamewith.jp/search/results?query=%s GameWith\ngems: https://rubygems.org/search?query=%s",
+  "searchUrl": "https://www.google.com/search?q=",
+  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
+}
