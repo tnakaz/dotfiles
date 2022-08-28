@@ -55,4 +55,9 @@ require('jetpack').startup(function(use)
   use 'onsails/lspkind-nvim'
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
+
+  -- Rails
+  -- use 'tpope/vim-rails'
+  use 'tpope/vim-endwise'
+  use 'slim-template/vim-slim'
 end)
