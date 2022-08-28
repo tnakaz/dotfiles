@@ -58,12 +58,15 @@ cmp.setup({
   sources = {
     { name = "nvim_lsp" },
     { name = "buffer" },
+    { name = "commandline" },
+    { name = 'vsnip' },
     -- { name = "path" },
   },
+
   mapping = cmp.mapping.preset.insert({
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-j>"] = cmp.mapping.select_next_item(),
-    ['<C-l>'] = cmp.mapping.complete(),
+    ['<C-n>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
     ["<CR>"] = cmp.mapping.confirm { select = true }
   }),
