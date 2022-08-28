@@ -1,10 +1,13 @@
 #!/bin/sh
 
 echo "Create dotfile links."
-ln -snfv ~/dotfiles/.vimrc ~
-ln -snfv ~/dotfiles/vim/settings ~/.vim/settings
-ln -snfv ~/dotfiles/vim/UltiSnips ~/.vim/UltiSnips
-ln -snfv ~/dotfiles/vim/colors ~/.vim/colors
+ln -snfv ~/dotfiles/nvim/init.lua ~/.config/nvim
+ln -snfv ~/dotfiles/nvim/lua ~/.config/nvim/lua
+# old
+# ln -snfv ~/dotfiles/.vimrc ~
+# ln -snfv ~/dotfiles/vim/settings ~/.vim/settings
+# ln -snfv ~/dotfiles/vim/UltiSnips ~/.vim/UltiSnips
+# ln -snfv ~/dotfiles/vim/colors ~/.vim/colors
 rm ~/Library/Application\ Support/lazygit/config.yml
 ln -snfv ~/dotfiles/vim/lazygit/config.yml ~/Library/Application\ Support/lazygit/
 # InstallFont
