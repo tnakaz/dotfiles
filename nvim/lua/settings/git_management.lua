@@ -12,7 +12,7 @@ vim.g.gitgutter_map_keys = 0
 
 vim.g.gitgutter_preview_win_floating = 0
 vim.g.gitgutter_preview_win_location = 'bo'
-vim.g.gitgutter_highlight_lines = 1
+-- vim.g.gitgutter_highlight_lines = 1
 
 vim.keymap.set('n', ']h', '<Plug>(GitGutterNextHunk)')
 vim.keymap.set('n', '[h', '<Plug>(GitGutterPrevHunk)')

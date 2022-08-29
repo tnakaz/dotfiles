@@ -3,6 +3,7 @@
 vim.g.mapleader = ' '
 
 vim.o.helplang = 'ja,en'
+vim.o.swapfile = false
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.mouse = 'a'
