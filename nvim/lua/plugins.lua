@@ -42,20 +42,10 @@ require('jetpack').startup(function(use)
   use 'lambdalisue/glyph-palette.vim'
 
   -- Lsp
-  use 'neovim/nvim-lspconfig'
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
-
-  -- Auto complete
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'onsails/lspkind-nvim'
+  use {'neoclide/coc.nvim', branch = 'release'}
+  use 'neoclide/coc-solargraph'
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
-  use 'hrsh7th/cmp-vsnip'
   use 'rafamadriz/friendly-snippets'
 
   -- Rails

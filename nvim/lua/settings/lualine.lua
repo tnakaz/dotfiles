@@ -18,7 +18,7 @@ lualine.setup {
     lualine_b = { 'branch', 'diff' },
     lualine_c = { { 'filename', path = 1 } },
     lualine_x = { 'encoding', 'filetype' },
-    lualine_y = { { 'diagnostics', source = { 'nvim-lsp' } } },
+    lualine_y = { { 'diagnostics', source = { 'coc' } } },
     lualine_z = { { 'location', color = { fg = 'grey', bg = 'gray21' } } }
   },
   inactive_sections = {
