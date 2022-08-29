@@ -35,7 +35,6 @@ require('jetpack').startup(function(use)
   use 'lambdalisue/fern.vim'
   use 'yuki-yano/fern-preview.vim'
   use 'lambdalisue/fern-git-status.vim'
-  use 'LumaKernel/fern-mapping-fzf.vim'
   use 'lambdalisue/fern-bookmark.vim'
   use 'lambdalisue/nerdfont.vim'
   use 'lambdalisue/fern-renderer-nerdfont.vim'
@@ -44,10 +43,8 @@ require('jetpack').startup(function(use)
   -- Lsp
   use {'neoclide/coc.nvim', branch = 'release'}
   use 'neoclide/coc-solargraph'
-  use 'hrsh7th/vim-vsnip'
-  use 'hrsh7th/vim-vsnip-integ'
   use 'rafamadriz/friendly-snippets'
-
+  use 'IngoMeyer441/coc_current_word'
   -- Rails
   -- use 'tpope/vim-rails'
   use 'tpope/vim-endwise'
