@@ -19,6 +19,7 @@ vim.o.hidden = true
 vim.wo.signcolumn = 'yes'
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
+vim.o.updatetime = 300
 vim.opt.termguicolors = true
 vim.opt.list = true
 vim.opt.listchars = "tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%"
