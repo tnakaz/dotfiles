@@ -52,14 +52,6 @@ vim.keymap.set("n", ",r", ':FzfLua live_grep<CR>')
 vim.keymap.set("n", ",w", ':FzfLua grep_cword <CR>')
 vim.keymap.set("n", ",F", ':FzfLua git_status<CR>')
 
-vim.cmd [[
-
-
-  nmap ]h <Plug>(GitGutterNextHunk)
-  nmap [h <Plug>(GitGutterPrevHunk)
-  nnoremap gif :<C-u>GitGutterFold<CR>
-  nmap ghp <Plug>(GitGutterPreviewHunk)
-]]
 -- OperatorReplace
 vim.keymap.set("n", "<Leader>r", '<Plug>(operator-replace)')
 
