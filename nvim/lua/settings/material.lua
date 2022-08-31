@@ -22,5 +22,8 @@ require('material').setup({
   },
 })
 
-vim.g.material_style = 'palenight'
+
+-- oceanic, deep ocean, palenight, lighter, darker
+vim.g.material_style = 'oceanic'
+
 vim.cmd('colorscheme material')
