@@ -21,6 +21,10 @@ vim.keymap.set('n', 'rn', '<Plug>(coc-rename)')
 vim.keymap.set('n', '<Leader>y', ':<C-u>CocList -A --normal yank<cr>')
 vim.keymap.set('n', '<Leader>a', '<Plug>(coc-codeaction-selected)')
 vim.keymap.set('v', '<Leader>a', '<Plug>(coc-codeaction-selected)')
+vim.keymap.set('i', '<C-j>', 'coc#pum#visible() ? coc#pum#next(1) : "<C-n>"', {noremap = true, silent = true, expr = true})
+vim.keymap.set('i', '<C-k>', 'coc#pum#visible() ? coc#pum#prev(1) : "<C-p>"', {noremap = true, silent = true, expr = true})
+vim.keymap.set('i', '<CR>', 'coc#pum#visible() ? coc#pum#confirm() : "<C-y>"', {noremap = true, silent = true, expr = true})
+
 vim.cmd[[
   "Diagnosticsの、左横のアイコンの色設定
   highlight CocErrorSign ctermfg=15 ctermbg=196
