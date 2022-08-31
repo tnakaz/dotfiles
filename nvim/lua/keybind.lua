@@ -16,6 +16,8 @@ vim.keymap.set('n', '<Leader>o', ':<C-u>call WinExpand()<CR>')
 vim.keymap.set('n', '<C-q>', ':bd!<cr>')
 vim.keymap.set('n', '<Leader>s', '<Plug>SearchNormal')
 vim.keymap.set('v', '<Leader>s', '<Plug>SearchVisual')
+vim.keymap.set('t', '<C-n>', '<C-\\><C-n>')
+vim.keymap.set('t', '<C-w><C-w>', '<C-\\><C-n><C-w>w')
 
 vim.cmd [[
   function! WinExpand ()
