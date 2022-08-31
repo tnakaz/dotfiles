@@ -1,7 +1,7 @@
 vim.keymap.set('i', 'jk', '<esc>')
 vim.keymap.set('n', '<Leader>w', ':<C-u>w<CR>')
 vim.keymap.set('n', '<Leader>q', ':<C-u>q<CR>')
-vim.keymap.set('n', '<Leader>s', ':<C-u>source %<CR>')
+vim.keymap.set('n', '<Leader>%', ':<C-u>source %<CR>')
 vim.keymap.set('n', '<Leader>?', ':<C-u>WhichKey<CR>')
 vim.keymap.set('n', '<Leader>P', ':<C-u>echo expand("%:p")<CR>')
 vim.keymap.set('n', '<Leader>h', '^')
@@ -13,6 +13,9 @@ vim.keymap.set('n', '<Leader>b', ':<C-u>Fern bookmark:///<CR>')
 vim.keymap.set('n', '<Leader>=', ':<C-u>call WinCollapse()<CR>')
 vim.keymap.set('n', '<Leader>O', ':<C-u>only<CR>')
 vim.keymap.set('n', '<Leader>o', ':<C-u>call WinExpand()<CR>')
+vim.keymap.set('n', '<C-q>', ':bd!<cr>')
+vim.keymap.set('n', '<Leader>s', '<Plug>SearchNormal')
+vim.keymap.set('v', '<Leader>s', '<Plug>SearchVisual')
 
 vim.cmd [[
   function! WinExpand ()
