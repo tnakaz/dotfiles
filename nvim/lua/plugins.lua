@@ -25,6 +25,7 @@ require('jetpack').startup(function(use)
   use 'zefei/vim-wintabs-powerline'
   use 'machakann/vim-highlightedyank'
   use 'wellle/targets.vim'
+  use 'w0rp/ale'
 
   -- Git Management
   use 'tpope/vim-fugitive'
