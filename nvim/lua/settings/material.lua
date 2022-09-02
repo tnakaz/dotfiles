@@ -19,8 +19,12 @@ require('material').setup({
   custom_highlights = {
     GitGutterAddLine = { bg = '#26402a' },
     GitGutterDeleteLine = { bg = 'NONE' },
+    NormalNC = {bg='#364a54'}
   },
 })
 
-vim.g.material_style = 'palenight'
+
+-- oceanic, deep ocean, palenight, lighter, darker
+vim.g.material_style = 'oceanic'
+
 vim.cmd('colorscheme material')

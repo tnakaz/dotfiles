@@ -25,6 +25,8 @@ require('jetpack').startup(function(use)
   use 'zefei/vim-wintabs-powerline'
   use 'machakann/vim-highlightedyank'
   use 'wellle/targets.vim'
+  use 'w0rp/ale'
+  use 'voldikss/vim-browser-search'
 
   -- Git Management
   use 'tpope/vim-fugitive'
@@ -62,4 +64,5 @@ require('jetpack').startup(function(use)
   -- use 'tpope/vim-rails'
   use 'tpope/vim-endwise'
   use 'slim-template/vim-slim'
+  use 'sheerun/vim-polyglot'
 end)
