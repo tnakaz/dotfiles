@@ -34,10 +34,13 @@ require('jetpack').startup(function(use)
   use 'kdheepak/lazygit.nvim'
 
   -- Filer
+  use '~/.fzf.vim'
+  use { 'junegunn/fzf', run = 'call fzf#install()' }
   use 'lambdalisue/fern.vim'
-  use 'yuki-yano/fern-preview.vim'
+  use 'lambdalisue/fern-hijack.vim'
   use 'lambdalisue/fern-git-status.vim'
   use 'LumaKernel/fern-mapping-fzf.vim'
+  use 'yuki-yano/fern-preview.vim'
   use 'lambdalisue/fern-bookmark.vim'
   use 'lambdalisue/nerdfont.vim'
   use 'lambdalisue/fern-renderer-nerdfont.vim'
