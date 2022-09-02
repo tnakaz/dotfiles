@@ -43,8 +43,8 @@ require('jetpack').startup(function(use)
 
   -- Lsp
   use 'neovim/nvim-lspconfig'
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
+  -- use 'williamboman/mason.nvim'
+  -- use 'williamboman/mason-lspconfig.nvim'
 
   -- Auto complete
   use 'hrsh7th/nvim-cmp'
