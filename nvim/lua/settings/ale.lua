@@ -4,10 +4,14 @@ vim.g.ale_fix_on_save = 1
 
 vim.g.ale_sign_error = ''
 vim.g.ale_sign_warning = ''
-vim.g.ale_echo_msg_format = '[%linter%]%code: %%s'
+vim.g.ale_echo_msg_format = '[%linter%] %code: %%s'
+
 vim.g.ale_fixers = {
-  ['*'] = {'remove_trailing_lines', 'trim_whitespace'},
-  ruby = {'rubocop'}
+  ['*'] = { 'remove_trailing_lines', 'trim_whitespace' },
+  ruby = { 'rubocop' },
+  slim = { 'slim-lint' },
+  lua = { 'luafmt' },
+  json = { 'fixjson' }
 }
 
 vim.keymap.set('n', '<C-k>', '<Plug>(ale_previous_wrap)')

@@ -14,10 +14,10 @@ lsp_opt = {
     vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<Leader>a', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', 'bf', vim.lsp.buf.formatting, bufopts)
-    vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float, { noremap=true, silent=true })
-    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { noremap=true, silent=true })
-    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { noremap=true, silent=true })
-    vim.keymap.set('n', '<Leader>q', vim.diagnostic.setloclist, { noremap=true, silent=true })
+    vim.keymap.set('n', '<Leader>eo', vim.diagnostic.open_float, { noremap = true, silent = true })
+    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { noremap = true, silent = true })
+    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { noremap = true, silent = true })
+    vim.keymap.set('n', '<Leader>el', vim.diagnostic.setloclist, { noremap = true, silent = true })
   end,
 
   capabilities = require('cmp_nvim_lsp').update_capabilities(
