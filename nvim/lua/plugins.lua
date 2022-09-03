@@ -34,7 +34,6 @@ require('jetpack').startup(function(use)
   use 'kdheepak/lazygit.nvim'
 
   -- Filer
-  use '~/.fzf.vim'
   use { 'junegunn/fzf', run = 'call fzf#install()' }
   use 'lambdalisue/fern.vim'
   use 'lambdalisue/fern-hijack.vim'
@@ -68,4 +67,7 @@ require('jetpack').startup(function(use)
   use 'tpope/vim-endwise'
   use 'slim-template/vim-slim'
   use 'sheerun/vim-polyglot'
+
+  use 'tpope/vim-dadbod'
+  use 'kristijanhusak/vim-dadbod-ui'
 end)

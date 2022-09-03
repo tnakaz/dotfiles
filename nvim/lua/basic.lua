@@ -24,5 +24,6 @@ vim.opt.termguicolors = true
 vim.opt.list = true
 vim.opt.listchars = "tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%"
 
+vim.g.db_ui_use_nerd_fonts = 1
 vim.cmd("autocmd InsertLeave * :call system('im-select com.apple.keylayout.ABC')")
 vim.cmd("autocmd CmdlineLeave * :call system('im-select com.apple.keylayout.ABC')")
