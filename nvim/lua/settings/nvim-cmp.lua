@@ -1,5 +1,5 @@
 local cmp = require("cmp")
- local lspkind = require('lspkind')
+local lspkind = require('lspkind')
 
 cmp.setup({
   snippet = {
@@ -10,7 +10,6 @@ cmp.setup({
   sources = {
     { name = "nvim_lsp" },
     { name = "buffer" },
-    { name = "commandline" },
     { name = 'vsnip' },
     -- { name = "path" },
   },
@@ -31,9 +30,22 @@ cmp.setup({
       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
       -- The function below will be called before any actual modifications from lspkind
       -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-      before = function (entry, vim_item)
+      before = function(entry, vim_item)
         return vim_item
       end
     })
   }
+})
+cmp.setup.cmdline(":", {
+  sources = {
+    { name = "cmdline_history", max_item_count = 10 },
+    { name = "cmdline", max_item_count = 10 },
+  },
+})
+
+cmp.setup.cmdline("/", {
+  sources = {
+    { name = "buffer", max_item_count = 10 },
+    { name = "cmdline_history", max_item_count = 10 },
+  },
 })
