@@ -1,30 +1,57 @@
+git:
+  autofetch: true
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never --syntax-theme="OneHalfDark"
 gui:
-  # stuff relating to the UI
-  scrollHeight: 4 # how many lines you scroll by
-  scrollPastBottom: true # enable scrolling past the bottom
+  commitlength:
+    show: true
+  scrollheight: 2
+  scrollpastbottom: true
+  mouseEvents: true
+  sidePanelWidth: 0.3333 # number from 0 to 1
+  expandFocusedSidePanel: true
+  mainPanelSplitMode: 'horizontal' # one of 'horizontal' | 'flexible' | 'vertical'
   theme:
-    lightTheme: false # For terminals with a light background
+    lightTheme: false
     activeBorderColor:
-      - red
-      - reverse
+      - cyan
+      - bold
     inactiveBorderColor:
       - white
     optionsTextColor:
       - blue
     selectedLineBgColor:
-      - default # set to `default` to have no background colour
-      - underline
-      - bold
+      - "#616161"
     selectedRangeBgColor:
       - blue
-    cherryPickedCommitBgColor:
-      - cyan
-    cherryPickedCommitFgColor:
-      - blue
-    unstagedChangesColor:
-      - red
-  mouseEvents: true
+keybinding:
+  universal:
+    gotoTop: 'g'
+    gotoBottom: 'G'
 os:
   editCommandTemplate: '{{editor}} +{{line}} {{filename}}'
   # editCommand: 'nvr --nostart --servername $NVIM --remote-silent -l'
   # editCommand: "nvr -cc vsplit --remote-wait +'set bufhidden=wipe'"
+customCommands:
+- key: '<c-d>'
+  command: 'git difftool {{.SelectedFile.Name}}'
+  context: 'files'
+  subprocess: true
+  description: 'compare diff use git difftool'
+- key: '<c-d>'
+  command: 'git difftool {{.SelectedLocalCommit.Sha}}~ {{.SelectedLocalCommit.Sha}} {{.SelectedCommitFile.Name}}'
+  context: 'commitFiles'
+  subprocess: true
+  description: 'compare diff with parent commit use git difftool'
+- key: '<c-f>'
+  command: 'git diff {{.SelectedFile.Name}}'
+  context: 'files'
+  subprocess: true
+  description: 'compare diff use git diff'
+- key: '<c-f>'
+  command: 'git diff {{.SelectedLocalCommit.Sha}}~ {{.SelectedLocalCommit.Sha}} {{.SelectedCommitFile.Name}}'
+  context: 'commitFiles'
+  subprocess: true
+  description: 'compare diff with parent commit use git diff'
+promptToReturnFromSubprocess: false
