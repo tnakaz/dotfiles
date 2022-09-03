@@ -78,3 +78,14 @@ vim.keymap.set("n", "j", 'gj')
 vim.keymap.set("n", "k", 'gk')
 
 vim.keymap.set("n", "<Leader>g", ':<C-u>LazyGit<CR>')
+
+-- snippets
+vim.cmd [[
+  imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+  smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+  imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+  smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+
+  let g:vsnip_filetypes = {}
+  let g:vsnip_filetypes.ruby = ['rails']
+]]
