@@ -13,3 +13,9 @@ require('settings.fzf')
 require('settings.wintabs')
 require('settings.ale')
 require('settings.nvim-cmp')
+
+vim.cmd [[
+  if has('nvim') && executable('nvr')
+    let $GIT_EDITOR = "nvr --nostart --servername $NVIM --remote-silent -l"
+  endif
+]]

@@ -24,3 +24,7 @@ gui:
     unstagedChangesColor:
       - red
   mouseEvents: true
+os:
+  editCommandTemplate: '{{editor}} +{{line}} {{filename}}'
+  # editCommand: 'nvr --nostart --servername $NVIM --remote-silent -l'
+  # editCommand: "nvr -cc vsplit --remote-wait +'set bufhidden=wipe'"
