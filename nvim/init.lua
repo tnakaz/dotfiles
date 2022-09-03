@@ -16,6 +16,6 @@ require('settings.nvim-cmp')
 
 vim.cmd [[
   if has('nvim') && executable('nvr')
-    let $GIT_EDITOR = "nvr --nostart --servername $NVIM --remote-silent -l"
+    let $GIT_EDITOR = "nvr --servername $NVIM --remote-silent -l"
   endif
 ]]
