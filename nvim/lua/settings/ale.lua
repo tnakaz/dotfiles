@@ -9,7 +9,6 @@ vim.g.ale_echo_msg_format = '[%linter%] %code: %%s'
 vim.g.ale_fixers = {
   ['*'] = { 'remove_trailing_lines', 'trim_whitespace' },
   ruby = { 'rubocop' },
-  slim = { 'slim-lint' },
   lua = { 'luafmt' },
   json = { 'fixjson' }
 }
