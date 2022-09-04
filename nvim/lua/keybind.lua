@@ -24,8 +24,10 @@ vim.keymap.set('n', 's', '<Nop>')
 vim.keymap.set('n', 'S', '<Nop>')
 vim.keymap.set('o', 'x', '<Nop>')
 
-vim.keymap.set('n', 'n', '<Plug>Lightspeed_omni_s')
-vim.keymap.set('n', 'N', '<Plug>Lightspeed_omni_gs')
+
+vim.keymap.set("n", "<Leader>k", '<Plug>(jumpcursor-jump)')
+vim.keymap.set('n', '<Leader>j', '<Plug>Lightspeed_omni_s')
+vim.keymap.set('n', '<Leader>J', '<Plug>Lightspeed_omni_gs')
 
 vim.cmd [[
   function! WinExpand ()
@@ -63,9 +65,6 @@ vim.keymap.set("n", ",F", ':FzfLua git_status<CR>')
 
 -- OperatorReplace
 vim.keymap.set("n", "<Leader>r", '<Plug>(operator-replace)')
-
--- Jumpcursor
-vim.keymap.set("n", "<Leader>j", '<Plug>(jumpcursor-jump)')
 
 -- vim-quickhl
 vim.keymap.set("n", "<Leader>m", '<Plug>(quickhl-manual-this)')
