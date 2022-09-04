@@ -70,6 +70,7 @@ require('jetpack').startup(function(use)
   use 'slim-template/vim-slim'
 
   use 'sheerun/vim-polyglot' -- Syntax Highlight
+  use 'nvim-treesitter/nvim-treesitter'
 
   -- DB
   use 'tpope/vim-dadbod'
