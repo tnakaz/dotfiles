@@ -1,4 +1,4 @@
-lsp_opt = {
+local lsp_opt = {
   -- -- Function executed when the LSP server startup
   on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
@@ -28,7 +28,7 @@ lsp_opt = {
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 
-require('lspconfig')['solargraph'].setup{ lsp_opt }
+require('lspconfig')['solargraph'].setup(lsp_opt)
 
 -- LSP handlers
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
