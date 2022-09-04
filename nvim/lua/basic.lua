@@ -27,3 +27,12 @@ vim.opt.listchars = "tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%"
 vim.g.db_ui_use_nerd_fonts = 1
 vim.cmd("autocmd InsertLeave * :call system('im-select com.apple.keylayout.ABC')")
 vim.cmd("autocmd CmdlineLeave * :call system('im-select com.apple.keylayout.ABC')")
+
+vim.g.targets_nl = 'nN'
+-- target-lineの動作置き換え。-が使われていると-が選択されるのでxで置き換え
+vim.cmd [[
+  autocmd User targets#mappings#user call targets#mappings#extend({
+    \ '-': {'separator': [{'d': '-'}]},
+    \ 'x': {'line': [{'c': 1}]},
+    \ })
+]]
