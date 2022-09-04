@@ -1,4 +1,4 @@
-lsp_opt = {
+local lsp_opt = {
   -- -- Function executed when the LSP server startup
   on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
