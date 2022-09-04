@@ -4,7 +4,7 @@ require('jetpack').startup(function(use)
   use { 'tani/vim-jetpack', opt = 1 } -- bootstrap
   use 'vim-jp/vimdoc-ja'
 
-  -- Thema
+  -- Theme
   use 'marko-cerovac/material.nvim'
   use 'nvim-lualine/lualine.nvim'
 
@@ -15,20 +15,22 @@ require('jetpack').startup(function(use)
   use 'kana/vim-operator-user'
   use 'kana/vim-operator-replace'
   use 'simeji/winresizer'
-  use 't9md/vim-quickhl'
+  use 't9md/vim-quickhl' -- 任意の文字をハイライト
   use 'folke/which-key.nvim'
-  use 'tversteeg/registers.nvim'
-  use 'justinmk/vim-sneak'
-  use 'unblevable/quick-scope'
-  use 'skanehira/jumpcursor.vim'
+  use 'tversteeg/registers.nvim' -- i <C-r>でレジスタ表示
   use 'zefei/vim-wintabs'
   use 'zefei/vim-wintabs-powerline'
-  use 'machakann/vim-highlightedyank'
+  use 'machakann/vim-highlightedyank' -- yankをハイライト
   use 'wellle/targets.vim'
-  use 'w0rp/ale'
+  use 'wellle/line-targets.vim'
   use 'voldikss/vim-browser-search'
 
-  -- Git Management
+  -- 移動系
+  use 'ggandor/lightspeed.nvim'
+  use 'skanehira/jumpcursor.vim'
+  use 'unblevable/quick-scope' -- 最短で移動できる文字の色を変える
+
+  -- Git
   use 'tpope/vim-fugitive'
   use 'airblade/vim-gitgutter'
   use 'kdheepak/lazygit.nvim'
@@ -47,6 +49,7 @@ require('jetpack').startup(function(use)
 
   -- Lsp
   use 'neovim/nvim-lspconfig'
+  use 'w0rp/ale'
   -- use 'williamboman/mason.nvim'
   -- use 'williamboman/mason-lspconfig.nvim'
 
@@ -54,7 +57,6 @@ require('jetpack').startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'onsails/lspkind-nvim'
   use 'hrsh7th/vim-vsnip'
@@ -66,8 +68,10 @@ require('jetpack').startup(function(use)
   -- use 'tpope/vim-rails'
   use 'tpope/vim-endwise'
   use 'slim-template/vim-slim'
-  use 'sheerun/vim-polyglot'
 
+  use 'sheerun/vim-polyglot' -- Syntax Highlight
+
+  -- DB
   use 'tpope/vim-dadbod'
   use 'kristijanhusak/vim-dadbod-ui'
 end)

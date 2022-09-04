@@ -19,6 +19,14 @@ vim.keymap.set('v', '<Leader>s', '<Plug>SearchVisual')
 vim.keymap.set('t', '<C-n>', '<C-\\><C-n>')
 vim.keymap.set('t', '<C-w><C-w>', '<C-\\><C-n><C-w>w')
 
+-- Nop for lightspeed
+vim.keymap.set('n', 's', '<Nop>')
+vim.keymap.set('n', 'S', '<Nop>')
+vim.keymap.set('o', 'x', '<Nop>')
+
+vim.keymap.set('n', 'n', '<Plug>Lightspeed_omni_s')
+vim.keymap.set('n', 'N', '<Plug>Lightspeed_omni_gs')
+
 vim.cmd [[
   function! WinExpand ()
       :res
