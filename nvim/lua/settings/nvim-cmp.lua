@@ -36,12 +36,12 @@ cmp.setup({
     })
   }
 })
-cmp.setup.cmdline(":", {
-  sources = {
-    { name = "cmdline_history", max_item_count = 10 },
-    { name = "cmdline", max_item_count = 10 },
-  },
-})
+-- cmp.setup.cmdline(":", {
+--   sources = {
+--     { name = "cmdline_history", max_item_count = 10 },
+--     { name = "cmdline", max_item_count = 10 },
+--   },
+-- })
 
 cmp.setup.cmdline("/", {
   sources = {
