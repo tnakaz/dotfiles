@@ -96,3 +96,8 @@ vim.cmd [[
   let g:vsnip_filetypes = {}
   let g:vsnip_filetypes.ruby = ['rails']
 ]]
+
+vim.cmd[[
+  :let @t=":term rails s\<CR>mT"
+  :let @g=":term lazygit\<CR>mG"
+]]
