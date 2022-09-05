@@ -13,6 +13,7 @@ require('settings.fzf')
 require('settings.wintabs')
 require('settings.ale')
 require('settings.nvim-cmp')
+require('settings.treesitter')
 
 vim.cmd [[
   if has('nvim') && executable('nvr')
