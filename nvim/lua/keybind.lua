@@ -14,8 +14,8 @@ vim.keymap.set('n', '<Leader>=', ':<C-u>call WinCollapse()<CR>')
 vim.keymap.set('n', '<Leader>O', ':<C-u>only<CR>')
 vim.keymap.set('n', '<Leader>o', ':<C-u>call WinExpand()<CR>')
 vim.keymap.set('n', '<C-q>', ':bd!<cr>')
-vim.keymap.set('n', '<Leader>s', '<Plug>SearchNormal')
-vim.keymap.set('v', '<Leader>s', '<Plug>SearchVisual')
+vim.keymap.set('n', '<Leader>S', '<Plug>SearchNormal')
+vim.keymap.set('v', '<Leader>S', '<Plug>SearchVisual')
 vim.keymap.set('t', '<C-n>', '<C-\\><C-n>')
 vim.keymap.set('t', '<C-w><C-w>', '<C-\\><C-n><C-w>w')
 
@@ -84,7 +84,7 @@ vim.keymap.set("i", "<C-l>", '<Right>')
 vim.keymap.set("n", "j", 'gj')
 vim.keymap.set("n", "k", 'gk')
 
-vim.keymap.set("n", "<Leader>g", ':<C-u>LazyGit<CR>')
+vim.keymap.set("n", "<Leader>G", ':<C-u>LazyGit<CR>')
 
 -- snippets
 vim.cmd [[
@@ -96,3 +96,11 @@ vim.cmd [[
   let g:vsnip_filetypes = {}
   let g:vsnip_filetypes.ruby = ['rails']
 ]]
+
+vim.cmd[[
+  :let @t=":term \<CR>:file server\<CR>irs\<CR>"
+  :let @g=":term \<CR>:file lazygit\<CR>ilg\<CR>"
+]]
+
+vim.keymap.set('n', '<Leader>s', ":b server<CR>")
+vim.keymap.set('n', '<Leader>g', ":b lazygit<CR>")
