@@ -1,6 +1,6 @@
 require 'nvim-treesitter.configs'.setup {
   ensure_installed = {'ruby', 'lua', 'yaml', 'json'},
-  sync_install = true,
+  sync_install =false,
   highlight = {
     enable = true,
     disable = { }
