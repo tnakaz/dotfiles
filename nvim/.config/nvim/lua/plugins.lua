@@ -15,7 +15,7 @@ require('jetpack').startup(function(use)
   use 'kana/vim-operator-user'
   use 'kana/vim-operator-replace'
   use 'simeji/winresizer'
-  use 't9md/vim-quickhl' -- 任意の文字をハイライト
+  -- use 't9md/vim-quickhl' -- 任意の文字をハイライト
   use 'folke/which-key.nvim'
   use 'tversteeg/registers.nvim' -- i <C-r>でレジスタ表示
   use 'zefei/vim-wintabs'
@@ -48,6 +48,7 @@ require('jetpack').startup(function(use)
   use 'lambdalisue/glyph-palette.vim'
 
   -- Lsp
+  use 'w0rp/ale'
   use 'neovim/nvim-lspconfig'
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
