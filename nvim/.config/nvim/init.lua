@@ -20,3 +20,13 @@ vim.cmd [[
     let $GIT_EDITOR = "nvr --remote-silent -l"
   endif
 ]]
+vim.cmd [[
+command -complete=file -nargs=1 GetVimgrepFile call GetVimgrepFile(<f-args>)
+function GetVimgrepFile(filename)
+  let l:orgErrorformat = &errorformat
+  let &errorformat='%f|%l col %v-%k| %m'
+  execute 'cfile ' . a:filename
+  copen
+  let &errorformat=l:orgErrorformat
+endfunction
+]]

@@ -34,6 +34,11 @@ os:
   # editCommand: 'nvr --nostart --servername $NVIM --remote-silent -l'
   # editCommand: "nvr -cc vsplit --remote-wait +'set bufhidden=wipe'"
 customCommands:
+- key: '<c-e>'
+  command: 'nvr --remote {{.SelectedFile.Name}}'
+  context: 'files'
+  subprocess: true
+  description: 'open to neovim'
 - key: '<c-d>'
   command: 'git difftool {{.SelectedFile.Name}}'
   context: 'files'

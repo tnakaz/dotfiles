@@ -23,10 +23,10 @@ vim.o.updatetime = 300
 vim.opt.termguicolors = true
 vim.opt.list = true
 vim.opt.listchars = "tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%"
-
 vim.g.db_ui_use_nerd_fonts = 1
 vim.cmd("autocmd InsertLeave * :call system('im-select com.apple.keylayout.ABC')")
 vim.cmd("autocmd CmdlineLeave * :call system('im-select com.apple.keylayout.ABC')")
+vim.cmd("autocmd QuickFixCmdPost *grep* cwindow")
 
 vim.g.targets_nl = 'nN'
 -- target-lineの動作置き換え。-が使われていると-が選択されるのでxで置き換え
@@ -42,4 +42,5 @@ vim.cmd [[
 vim.cmd[[
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
   let g:indentLine_char = '⦙'
+  autocmd FileType json let g:indentLine_enabled=0
 ]]

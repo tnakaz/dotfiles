@@ -11,7 +11,7 @@ local lsp_opt = {
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
     vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', '<Leader>a', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('n', '<Leader>c', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', 'bf', vim.lsp.buf.formatting, bufopts)
     vim.keymap.set('n', '<Leader>eo', vim.diagnostic.open_float, { noremap = true, silent = true })
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { noremap = true, silent = true })

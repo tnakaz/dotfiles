@@ -1,6 +1,6 @@
 --  保存時のみ実行
 vim.g.ale_lint_on_text_changed = 0
-vim.g.ale_fix_on_save = 1
+vim.g.ale_fix_on_save = 0
 
 vim.g.ale_sign_error = ''
 vim.g.ale_sign_warning = ''
@@ -10,7 +10,7 @@ vim.g.ale_fixers = {
   ['*'] = { 'remove_trailing_lines', 'trim_whitespace' },
   ruby = { 'rubocop' },
   lua = { 'luafmt' },
-  json = { 'fixjson' }
+  json = { 'jq' }
 }
 
 vim.keymap.set('n', '<C-k>', '<Plug>(ale_previous_wrap)')
