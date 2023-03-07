@@ -19,7 +19,7 @@ local lsp_opt = {
     vim.keymap.set('n', '<Leader>el', vim.diagnostic.setloclist, { noremap = true, silent = true })
   end,
 
-  capabilities = require('cmp_nvim_lsp').update_capabilities(
+  capabilities = require('cmp_nvim_lsp').default_capabilities(
     vim.lsp.protocol.make_client_capabilities()
   )
 }
@@ -31,7 +31,7 @@ require('mason-lspconfig').setup_handlers({ function(server)
 end })
 
 require("mason-lspconfig").setup({
-  ensure_installed = { "sumneko_lua", "solargraph", "jsonls" }
+  ensure_installed = { "solargraph", "jsonls" }
 })
 
 -- LSP handlers

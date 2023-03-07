@@ -1,6 +1,5 @@
 vim.cmd('packadd vim-jetpack')
-
-require('jetpack').startup(function(use)
+require('jetpack.packer').startup(function(use)
   use { 'tani/vim-jetpack', opt = 1 } -- bootstrap
   use 'vim-jp/vimdoc-ja'
 
@@ -17,7 +16,12 @@ require('jetpack').startup(function(use)
   use 'simeji/winresizer'
   -- use 't9md/vim-quickhl' -- 任意の文字をハイライト
   use 'folke/which-key.nvim'
-  use 'tversteeg/registers.nvim' -- i <C-r>でレジスタ表示
+  use {
+    "tversteeg/registers.nvim",
+    config = function()
+      require("registers").setup()
+    end,
+  }
   use 'zefei/vim-wintabs'
   use 'zefei/vim-wintabs-powerline'
   use 'machakann/vim-highlightedyank' -- yankをハイライト
@@ -66,7 +70,7 @@ require('jetpack').startup(function(use)
 
   -- Rails
   -- use 'tpope/vim-rails'
-  use 'tpope/vim-endwise'
+  -- use 'tpope/vim-endwise'
   use 'slim-template/vim-slim'
 
   use 'sheerun/vim-polyglot' -- Syntax Highlight
