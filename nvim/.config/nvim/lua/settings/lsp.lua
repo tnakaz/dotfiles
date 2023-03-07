@@ -19,7 +19,7 @@ local lsp_opt = {
     vim.keymap.set('n', '<Leader>el', vim.diagnostic.setloclist, { noremap = true, silent = true })
   end,
 
-  capabilities = require('cmp_nvim_lsp').update_capabilities(
+  capabilities = require('cmp_nvim_lsp').default_capabilities(
     vim.lsp.protocol.make_client_capabilities()
   )
 }
