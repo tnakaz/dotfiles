@@ -1,6 +1,7 @@
 --  保存時のみ実行
 vim.g.ale_lint_on_text_changed = 0
 vim.g.ale_fix_on_save = 0
+vim.g.ale_virtualtext_cursor = 'disabled'
 
 vim.g.ale_sign_error = ''
 vim.g.ale_sign_warning = ''
@@ -9,7 +10,6 @@ vim.g.ale_echo_msg_format = '[%linter%] %code: %%s'
 vim.g.ale_fixers = {
   ['*'] = { 'remove_trailing_lines', 'trim_whitespace' },
   ruby = { 'rubocop' },
-  lua = { 'luafmt' },
   json = { 'fixjson' },
   javascript = {'eslint'}
 }
