@@ -7,6 +7,8 @@ require('jetpack.packer').startup(function(use)
   use 'marko-cerovac/material.nvim'
   use 'nvim-lualine/lualine.nvim'
 
+  use 'github/copilot.vim'
+
   use 'ibhagwan/fzf-lua'
   use 'machakann/vim-sandwich'
   use 'cohama/lexima.vim'

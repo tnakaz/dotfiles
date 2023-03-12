@@ -1,6 +1,7 @@
 --  保存時のみ実行
 vim.g.ale_lint_on_text_changed = 0
 vim.g.ale_fix_on_save = 0
+vim.g.ale_virtualtext_cursor = 'disabled'
 
 vim.g.ale_sign_error = ''
 vim.g.ale_sign_warning = ''

@@ -31,7 +31,6 @@ vim.keymap.set('n', 'S', '<Nop>')
 vim.keymap.set('o', 'x', '<Nop>')
 
 
-vim.keymap.set("n", "<Leader>k", '<Plug>(jumpcursor-jump)')
 vim.keymap.set('n', '<Leader>j', '<Plug>Lightspeed_omni_s')
 vim.keymap.set('n', '<Leader>J', '<Plug>Lightspeed_omni_gs')
 
@@ -46,6 +45,12 @@ vim.cmd [[
   endfunction
 ]]
 
+-- Copilot
+vim.keymap.set('i', '<C-x>', '<Plug>(copilot-dismiss)')
+vim.keymap.set('i', '<C-\\>', '<Plug>(copilot-next)')
+vim.keymap.set('i', '<C-]>', '<Plug>(copilot-previous)')
+vim.keymap.set('i', '<C-s>', '<Plug>(copilot-suggest)')
+vim.keymap.set('n', '<Leader>k', ':<C-u>Copilot panel<CR>')
 -- fern
 vim.api.nvim_create_augroup('fern_setting', {})
 vim.api.nvim_create_autocmd({ 'FileType' }, {

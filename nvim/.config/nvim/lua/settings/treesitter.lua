@@ -1,8 +1,11 @@
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = {'ruby', 'lua', 'yaml', 'json'},
+  ensure_installed = {'ruby', 'yaml', 'json'},
   sync_install =false,
   highlight = {
     enable = true,
-    disable = { }
+    disable = { 'lua' }
+  },
+  indent = {
+    enable = false
   }
 }
