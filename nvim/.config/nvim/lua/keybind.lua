@@ -1,18 +1,19 @@
+vim.keymap.set('n', '<Leader>z', ':<C-u>ShowTimeline<CR>')
 vim.keymap.set('i', 'jk', '<esc>')
 vim.keymap.set('n', '<Leader>w', ':<C-u>w<CR>')
 vim.keymap.set('n', '<Leader>q', ':<C-u>q<CR>')
 vim.keymap.set('n', '<Leader>%', ':<C-u>source %<CR>')
 vim.keymap.set('n', '<Leader>?', ':<C-u>WhichKey<CR>')
-vim.keymap.set('n', '<Leader>P', ':<C-u>echo expand("%:p")<CR>')
+vim.keymap.set('n', '<Leader>P', ':<C-u>PathToClipboard<CR>')
 vim.keymap.set('n', '<Leader>h', '^')
 vim.keymap.set('n', '<Leader>l', '$')
 vim.keymap.set('n', '<Leader>f', ':<C-u>//gc<Home>%s/')
 vim.keymap.set('n', '<ESC><ESC>', ':<C-u>nohlsearch<CR>')
 vim.keymap.set('n', '<Leader>n', ':<C-u>Fern . -reveal=%<CR>')
 vim.keymap.set('n', '<Leader>b', ':<C-u>Fern bookmark:///<CR>')
-vim.keymap.set('n', '<Leader>=', ':<C-u>call WinCollapse()<CR>')
-vim.keymap.set('n', '<Leader>O', ':<C-u>only<CR>')
-vim.keymap.set('n', '<Leader>o', ':<C-u>call WinExpand()<CR>')
+vim.keymap.set('n', '<Leader>=', ':<C-u>WinEqualize<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>o', ':<C-u>WinMaximize<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>O', ':<C-u>WinOnly<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Leader>a', ':<C-u>ALEFix<CR>')
 vim.keymap.set('n', '<C-q>', ':bd!<cr>')
 vim.keymap.set('n', '<Leader>S', '<Plug>SearchNormal')
@@ -33,17 +34,6 @@ vim.keymap.set('o', 'x', '<Nop>')
 
 vim.keymap.set('n', '<Leader>j', '<Plug>Lightspeed_omni_s')
 vim.keymap.set('n', '<Leader>J', '<Plug>Lightspeed_omni_gs')
-
-vim.cmd [[
-  function! WinExpand ()
-      :res
-      :vert res
-  endfunction
-
-  function! WinCollapse()
-      exe "normal \<c-w>\="
-  endfunction
-]]
 
 -- Copilot
 vim.keymap.set('i', '<C-x>', '<Plug>(copilot-dismiss)')

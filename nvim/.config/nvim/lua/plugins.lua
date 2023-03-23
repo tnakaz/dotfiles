@@ -31,6 +31,10 @@ require('jetpack.packer').startup(function(use)
   use 'wellle/line-targets.vim'
   use 'voldikss/vim-browser-search'
 
+  use 'takuya-nakazawa/path-to-clipboard.nvim'
+  use 'takuya-nakazawa/window-layout-manager.nvim'
+  use 'takuya-nakazawa/code-evolution.nvim'
+
   -- 移動系
   use 'ggandor/lightspeed.nvim'
   use 'skanehira/jumpcursor.vim'
