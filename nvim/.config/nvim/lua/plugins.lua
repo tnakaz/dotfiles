@@ -1,3 +1,4 @@
+local openai_api_key = vim.fn.getenv("OPENAI_API_KEY")
 vim.cmd('packadd vim-jetpack')
 require('jetpack.packer').startup(function(use)
   use { 'tani/vim-jetpack', opt = 1 } -- bootstrap
@@ -8,6 +9,9 @@ require('jetpack.packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
 
   use 'github/copilot.vim'
+  if openai_api_key ~= nil and openai_api_key ~= "" then
+    use "ktakayama/gpt-commit-msg.vim"
+  end
 
   use 'ibhagwan/fzf-lua'
   use 'machakann/vim-sandwich'

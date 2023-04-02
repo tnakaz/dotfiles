@@ -14,6 +14,7 @@ require('settings.wintabs')
 require('settings.ale')
 require('settings.nvim-cmp')
 require('settings.treesitter')
+require('settings.gpt')
 
 vim.cmd [[
   if has('nvim') && executable('nvr')
