@@ -38,6 +38,7 @@ require('jetpack.packer').startup(function(use)
   use 'takuya-nakazawa/path-to-clipboard.nvim'
   use 'takuya-nakazawa/window-layout-manager.nvim'
   use 'takuya-nakazawa/code-evolution.nvim'
+  use 'takuya-nakazawa/commit-insight.nvim'
 
   -- 移動系
   use 'ggandor/lightspeed.nvim'
@@ -92,3 +93,4 @@ require('jetpack.packer').startup(function(use)
   use 'tpope/vim-dadbod'
   use 'kristijanhusak/vim-dadbod-ui'
 end)
+
