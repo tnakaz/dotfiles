@@ -40,6 +40,8 @@ require('jetpack.packer').startup(function(use)
   use 'takuya-nakazawa/code-evolution.nvim'
   use 'takuya-nakazawa/commit-insight.nvim'
 
+  use {'aduros/ai.vim', commit='921f4679366'}
+
   -- 移動系
   use 'ggandor/lightspeed.nvim'
   use 'skanehira/jumpcursor.vim'
