@@ -35,11 +35,11 @@ require('jetpack.packer').startup(function(use)
   use 'wellle/line-targets.vim'
   use 'voldikss/vim-browser-search'
 
-  use 'takuya-nakazawa/path-to-clipboard.nvim'
-  use 'takuya-nakazawa/window-layout-manager.nvim'
-  use 'takuya-nakazawa/code-evolution.nvim'
-  use 'takuya-nakazawa/commit-insight.nvim'
-  use 'takuya-nakazawa/ai.vim'
+  use 'tnakaz/path-to-clipboard.nvim'
+  use 'tnakaz/window-layout-manager.nvim'
+  use 'tnakaz/code-evolution.nvim'
+  use 'tnakaz/commit-insight.nvim'
+  use 'tnakaz/ai.vim'
 
   -- 移動系
   use 'ggandor/lightspeed.nvim'
