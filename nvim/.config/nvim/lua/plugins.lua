@@ -39,8 +39,7 @@ require('jetpack.packer').startup(function(use)
   use 'takuya-nakazawa/window-layout-manager.nvim'
   use 'takuya-nakazawa/code-evolution.nvim'
   use 'takuya-nakazawa/commit-insight.nvim'
-
-  use {'aduros/ai.vim', commit='921f4679366'}
+  use 'takuya-nakazawa/ai.vim'
 
   -- 移動系
   use 'ggandor/lightspeed.nvim'

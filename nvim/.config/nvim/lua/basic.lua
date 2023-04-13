@@ -28,9 +28,6 @@ vim.cmd("autocmd InsertLeave * :call system('im-select com.apple.keylayout.ABC')
 vim.cmd("autocmd CmdlineLeave * :call system('im-select com.apple.keylayout.ABC')")
 vim.cmd("autocmd QuickFixCmdPost *grep* cwindow")
 
-vim.g.ai_completions_model = "gpt-3.5-turbo"
-vim.g.ai_edits_model= "gpt-3.5-turbo"
-
 vim.g.targets_nl = 'nN'
 -- target-lineの動作置き換え。-が使われていると-が選択されるのでxで置き換え
 vim.cmd [[
