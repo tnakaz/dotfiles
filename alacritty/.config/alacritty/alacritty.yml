@@ -1,0 +1,14 @@
+# 余白設定
+window:
+  padding:
+    x: 5
+    y: 5
+
+# フォント設定（サイズのみ）
+font:
+  size: 14
+
+# スクロール設定
+scrolling:
+  history: 10000
+  multiplier: 3

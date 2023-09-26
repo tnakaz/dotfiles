@@ -8,6 +8,7 @@ vim.keymap.set('n', '<Leader>P', ':<C-u>PathToClipboard<CR>')
 vim.keymap.set('n', '<Leader>h', '^')
 vim.keymap.set('n', '<Leader>l', '$')
 vim.keymap.set('n', '<Leader>f', ':<C-u>//gc<Home>%s/')
+vim.keymap.set('v', '<Leader>f', [[:s///gc<Left><Left><Left><Left>]])
 vim.keymap.set('n', '<ESC><ESC>', ':<C-u>nohlsearch<CR>')
 vim.keymap.set('n', '<Leader>n', ':<C-u>Fern . -reveal=%<CR>')
 vim.keymap.set('n', '<Leader>b', ':<C-u>Fern bookmark:///<CR>')
@@ -15,7 +16,7 @@ vim.keymap.set('n', '<Leader>=', ':<C-u>WinEqualize<CR>', { noremap = true, sile
 vim.keymap.set('n', '<Leader>o', ':<C-u>WinMaximize<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Leader>O', ':<C-u>WinOnly<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Leader>a', ':<C-u>ALEFix<CR>')
-vim.keymap.set('n', '<C-q>', ':bd!<cr>')
+vim.keymap.set('n', '<Leader>x', ':bd!<cr>')
 vim.keymap.set('n', '<Leader>S', '<Plug>SearchNormal')
 vim.keymap.set('v', '<Leader>S', '<Plug>SearchVisual')
 vim.keymap.set('t', '<C-n>', '<C-\\><C-n>')
@@ -57,35 +58,33 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
 })
 
 -- fzf-lua
-vim.keymap.set("n", ",f", ':FzfLua files<CR>')
-vim.keymap.set("n", ",b", ':FzfLua buffers<CR>')
-vim.keymap.set("n", ",h", ':FzfLua oldfiles<CR>')
-vim.keymap.set("n", ",r", ':FzfLua live_grep<CR>')
-vim.keymap.set("n", ",w", ':FzfLua grep_cword <CR>')
-vim.keymap.set("n", ",F", ':FzfLua git_status<CR>')
+vim.keymap.set('n', ',f', ':FzfLua files<CR>')
+vim.keymap.set('n', ',b', ':FzfLua buffers<CR>')
+vim.keymap.set('n', ',h', ':FzfLua oldfiles<CR>')
+vim.keymap.set('n', ',r', ':FzfLua live_grep<CR>')
+vim.keymap.set('n', ',w', ':FzfLua grep_cword <CR>')
+vim.keymap.set('n', ',F', ':FzfLua git_status<CR>')
 
 -- OperatorReplace
-vim.keymap.set("n", "<Leader>r", '<Plug>(operator-replace)')
+vim.keymap.set('n', '<Leader>r', '<Plug>(operator-replace)')
 
 -- vim-quickhl
-vim.keymap.set("n", "<Leader>m", '<Plug>(quickhl-manual-this)')
-vim.keymap.set("n", "<Leader>M", '<Plug>(quickhl-manual-reset)')
-
--- 置き換え
-vim.keymap.set("n", "gs", ':<C-u>%s///g<Left><Left><Left>')
-vim.keymap.set("v", "gs", ':s///g<Left><Left><Left>')
+vim.keymap.set('n', '<Space>m', '<Plug>(quickhl-manual-this)')
+vim.keymap.set('x', '<Space>m', '<Plug>(quickhl-manual-this)')
+vim.keymap.set('n', '<Space>M', '<Plug>(quickhl-manual-reset)')
+vim.keymap.set('x', '<Space>M', '<Plug>(quickhl-manual-clear)')
 
 -- 入力モードでのカーソル移動
-vim.keymap.set("i", "<C-j>", '<Down>')
-vim.keymap.set("i", "<C-k>", '<Up>')
-vim.keymap.set("i", "<C-h>", '<Left>')
-vim.keymap.set("i", "<C-l>", '<Right>')
+vim.keymap.set('i', '<C-j>', '<Down>')
+vim.keymap.set('i', '<C-k>', '<Up>')
+vim.keymap.set('i', '<C-h>', '<Left>')
+vim.keymap.set('i', '<C-l>', '<Right>')
 
 -- 折り返し時に表示行単位での移動できるようにする
-vim.keymap.set("n", "j", 'gj')
-vim.keymap.set("n", "k", 'gk')
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('n', 'k', 'gk')
 
-vim.keymap.set("n", "<Leader>g", ':<C-u>LazyGit<CR>')
+vim.keymap.set('n', '<Leader>g', ':<C-u>LazyGit<CR>')
 
 -- snippets
 vim.cmd [[
